@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-11-09T06:58:59.699Z</updated>
+  <updated>2020-11-24T05:12:25.378Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo命令</title>
+    <link href="http://example.com/2020/11/24/%E5%91%BD%E4%BB%A4/"/>
+    <id>http://example.com/2020/11/24/%E5%91%BD%E4%BB%A4/</id>
+    <published>2020-11-24T04:55:16.185Z</published>
+    <updated>2020-11-24T05:12:25.378Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="命令三连杀"><a href="#命令三连杀" class="headerlink" title="命令三连杀"></a>命令三连杀</h2><p><code>hexo clean&amp;&amp; hexo g &amp;&amp; hexo d</code></p><p><code>hexo clean</code>#清理各种缓存和旧文件</p><p><code>hexo g</code>#生成静态文件</p><p><code>hexo s</code>#开启服务器预览</p><h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><p><code>hexo new &quot;postName&quot;</code> #新建文章</p><p><code>hexo new page &quot;pageName&quot;</code> #新建页面</p><p><code>hexo generate</code> #生成静态页面至public目录</p><p><code>hexo server</code> #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）</p><p><code>hexo deploy</code> #将.deploy目录部署到GitHub</p><p><code>hexo help</code>  # 查看帮助</p><p><code>hexo version</code>  #查看Hexo的版本</p><p><code>hexo deploy -g</code>  #生成加部署</p><p><code>hexo server -g</code>  #生成加预览</p><p>命令的简写</p><p><code>hexo n</code> == <code>hexo new</code> </p><p><code>hexo g</code> == <code>hexo generate</code>  #生成文件</p><p><code>hexo s</code> == <code>hexo server</code> #运行本地服务器</p><p><code>hexo d</code> == <code>hexo deploy</code> #上传到服务器</p><img src="https://588ku.com/tuku/qingxinzhuangse.html" />]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;命令三连杀&quot;&gt;&lt;a href=&quot;#命令三连杀&quot; class=&quot;headerlink&quot; title=&quot;命令三连杀&quot;&gt;&lt;/a&gt;命令三连杀&lt;/h2&gt;&lt;p&gt;&lt;code&gt;hexo clean&amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d&lt;/code&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>

@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/categories/index-1.html</loc>
+    
+    <lastmod>2020-11-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2020/11/24/%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2020-11-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2013/12/02/my-first-blog/</loc>
     
     <lastmod>2020-11-11</lastmod>
