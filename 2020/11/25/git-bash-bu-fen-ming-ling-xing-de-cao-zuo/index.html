@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="acm部分做题记录, lcdzzz的博客">
+    <meta name="keywords" content="git bash部分命令行的操作, lcdzzz的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>acm部分做题记录 | lcdzzz的博客</title>
+    <title>git bash部分命令行的操作 | lcdzzz的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">acm部分做题记录</h1>
+                    <h1 class="description center-align post-title">git bash部分命令行的操作</h1>
                 </div>
             </div>
         </div>
@@ -444,71 +444,54 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-11-28
+                    2020-11-25
                 </div>
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-11-25
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    470
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    1 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="acm做题部分记录"><a href="#acm做题部分记录" class="headerlink" title="acm做题部分记录"></a>acm做题部分记录</h1><h2 id="hdoj-2036改革春风吹满地"><a href="#hdoj-2036改革春风吹满地" class="headerlink" title="hdoj 2036改革春风吹满地"></a>hdoj 2036改革春风吹满地</h2><ul>
-<li>简述：（变成一般问题的话）一个多边形告诉你边数（定点数）为n，然后是按照逆时针顺序给出的n个顶点的坐标（x1, y1, x2, y2… xn, yn），然后求他的面积。</li>
-</ul>
-<p>这题最简单最快的方法就是叉乘法（原理不懂不要紧，记住公式，反正很容易记）</p>
-<p>部分代码实现</p>
-<blockquote>
-<pre><code>   for (int i = 0; i &lt; n; i++) &#123;
-                int t = i + 1;
-                if (t == n) &#123;
-                    t = 0;
-                &#125;
-                s = s+(a[i] * b[t] - a[t] * b[i])/2.0;
-            &#125;</code></pre>
-</blockquote>
-<p>这当中，数组a代表x坐标，数组b代表y坐标，从i=0（第一个点）叉乘到i=n-1（最后一个点）</p>
-<p>这些点是逆时针顺序的，如果是顺时针，那么求出来的值是负数，就要在前面加一个绝对值<code>Math.abs</code></p>
-<p>上面代码翻译成数学就是:</p>
-<p>s = [（x1 * y2 - x2 * y1）+（x2 * y3 - x3 * y2) + ….. + (x(n - 2) * y(n - 1)-x(n - 1) * y(n - 2))+(x(n-1) * y0 - x0 * y(n-1)) ]/2.0</p>
-<p>接下来就是喜闻乐见的整体代码</p>
-<blockquote>
-<pre><code>   import java.util.Scanner;
-
-   public class Main &#123;
-        public static void main(String[] args) &#123;
-            Scanner in = new Scanner(System.in);
-            while (in.hasNext()) &#123;
-                int n = in.nextInt();
-                if (n == 0) &#123;
-                    break;
-        &#125;
-        int  [] a = new int [n];
-        int  [] b = new int [n];
-        for (int i = 0; i &lt; n; i++) &#123;
-            a[i] = in.nextInt();
-            b[i] = in.nextInt();
-        &#125;
-        double s = 0;
-        for (int i = 0; i &lt; n; i++) &#123;
-            int t = i + 1;
-            if (t == n) &#123;
-                t = 0;
-            &#125;
-            s = s+(a[i] * b[t] - a[t] * b[i])/2.0;
-        &#125;
-        System.out.println(Math.abs(s));
-    &#125;
-&#125;</code></pre>
-<p>}</p>
-</blockquote>
+                <h3 id="使用git-bash-创建文件及文件夹命令"><a href="#使用git-bash-创建文件及文件夹命令" class="headerlink" title="使用git bash 创建文件及文件夹命令"></a>使用git bash 创建文件及文件夹命令</h3><p>1.cd : 切换到哪个目录下， 如 cd e:\fff 切换 E 盘下面的fff 目录。<br>　　当我们用cd 进入文件夹时,我们可以使用 通配符*, cd f*, 如果E盘下只有一个f开头的文件夹,它就会进入到这个文件夹.<br>2.cd … 回退到上一个目录， 注意，cd 和两个点点…之间有一个空格。<br>3.pwd : 显示当前目录路径。<br>4.ls(ll): 都是列出当前目录中的所有文件，只不过ll(两个ll)列出的内容更为详细。<br>5.touch : 新建一个文件 如 touch index.js 就会在当前目录下新建一个index.js文件。<br>6.rm: 删除一个文件, rm index.js 就会把index.js文件删除.<br>7.mkdir: 新建一个目录,就是新建一个文件夹. 如mkdir src 新建src 文件夹.<br>8.rm -r : 删除一个文件夹, rm -r src 删除src目录， 好像不能用通配符。<br>9.mv 移动文件, mv index.html src index.html 是我们要移动的文件, src 是目标文件夹,当然, 这样写,必须保证文件和目标文件夹在同一目录下.<br>10.reset 清屏，把git bash命令窗口中的所有内容清空。</p>
+<h3 id="Vim编辑器的撤销与恢复撤销操作"><a href="#Vim编辑器的撤销与恢复撤销操作" class="headerlink" title="Vim编辑器的撤销与恢复撤销操作"></a>Vim编辑器的撤销与恢复撤销操作</h3><ol>
+<li><p>使用vim修改文档内容</p>
+</li>
+<li><p>按下Esc，回到命令模式</p>
+</li>
+<li><p>按下u，可以发现刚刚新加的内容全部消失了，vim编辑器底部还会显示“4 行被去掉的操作提示”，这就是撤销操作。</p>
+</li>
+<li><p>如果我们想回复到撤销前的内容，按下ctrl+r</p>
+<p>可以看到刚刚被我们撤掉的四行内容又回来了，而且vim编辑器底部会显示“4 行被加入的操作提示”，这就是恢复撤销操作。</p>
+</li>
+</ol>
 
             </div>
             <hr/>
@@ -534,7 +517,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/11/28/acm%E9%83%A8%E5%88%86%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/">http://example.com/2020/11/28/acm%E9%83%A8%E5%88%86%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/</a>
+                    <a href="http://example.com/2020/11/25/git-bash-bu-fen-ming-ling-xing-de-cao-zuo/">http://example.com/2020/11/25/git-bash-bu-fen-ming-ling-xing-de-cao-zuo/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -739,50 +722,11 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
-            <div class="card">
-                <a href="/2020/11/28/acm%E9%83%A8%E5%88%86%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="acm部分做题记录">
-                        
-                        <span class="card-title">acm部分做题记录</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-28
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            lcdzzz
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/11/25/java%E8%AF%AD%E6%B3%95%E9%9A%8F%E8%AE%B0/">
+                <a href="/2020/11/25/java-yu-fa-sui-ji/">
                     <div class="card-image">
                         
                         
@@ -798,8 +742,45 @@
                         
                     </div>
                     <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-25
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            lcdzzz
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/11/24/jie-jue-java-cuo-wu-bian-ma-gbk-de-bu-ke-ying-she-zi-fu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="解决 java “错误：编码GBK 的不可映射字符”">
+                        
+                        <span class="card-title">解决 java “错误：编码GBK 的不可映射字符”</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-24
                             </span>
                         <span class="publish-author">
                             
@@ -1013,6 +994,9 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">2k</span>&nbsp;字
             
             
             
