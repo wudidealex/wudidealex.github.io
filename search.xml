@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="2021/01/18/chang-jian-de-dos-ming-ling/"/>
+      <url>2021/01/18/chang-jian-de-dos-ming-ling/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>打开DOS命令窗口：</p><p>开始菜单–&gt;运行–&gt;输入cmd–&gt;回车/win+r</p></li><li><p>常见的DOS命令：</p><ol><li><p>cls 清屏。</p></li><li><p>DOS窗口怎么复制：选中复制内容后在任意位置点击鼠标右键，此时内容已经在剪切板了。</p></li><li><p>dir 列出当前目录下所有的子文件/子目录。</p></li><li><p>cd 命令</p><ul><li><p>cd命令表示：change directory。</p></li><li><p>怎么用：cd 目录的路径。</p></li><li><p>cd.. 回到上级目录。</p></li><li><p>cd\ 直接回到根目录。</p></li><li><p>怎么切换盘符：</p><p>d:回车。</p></li></ul></li></ol></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>acm部分做题记录</title>
       <link href="2020/11/28/acm-bu-fen-zuo-ti-ji-lu/"/>
       <url>2020/11/28/acm-bu-fen-zuo-ti-ji-lu/</url>
