@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>lcdzzz的博客</title>
   
-  <subtitle>你在教我做事？</subtitle>
+  <subtitle>等待白鸽飞出</subtitle>
   <link href="http://lcdzzz.github.io/atom.xml" rel="self"/>
   
   <link href="http://lcdzzz.github.io/"/>
-  <updated>2021-01-18T07:22:04.170Z</updated>
+  <updated>2021-01-18T07:24:43.657Z</updated>
   <id>http://lcdzzz.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>常见的DOS命令</title>
     <link href="http://lcdzzz.github.io/2021/01/18/chang-jian-de-dos-ming-ling/"/>
     <id>http://lcdzzz.github.io/2021/01/18/chang-jian-de-dos-ming-ling/</id>
     <published>2021-01-18T07:22:04.169Z</published>
-    <updated>2021-01-18T07:22:04.170Z</updated>
+    <updated>2021-01-18T07:24:43.657Z</updated>
     
     <content type="html"><![CDATA[<ul><li><p>打开DOS命令窗口：</p><p>开始菜单–&gt;运行–&gt;输入cmd–&gt;回车/win+r</p></li><li><p>常见的DOS命令：</p><ol><li><p>cls 清屏。</p></li><li><p>DOS窗口怎么复制：选中复制内容后在任意位置点击鼠标右键，此时内容已经在剪切板了。</p></li><li><p>dir 列出当前目录下所有的子文件/子目录。</p></li><li><p>cd 命令</p><ul><li><p>cd命令表示：change directory。</p></li><li><p>怎么用：cd 目录的路径。</p></li><li><p>cd.. 回到上级目录。</p></li><li><p>cd\ 直接回到根目录。</p></li><li><p>怎么切换盘符：</p><p>d:回车。</p></li></ul></li></ol></li></ul>]]></content>
     
