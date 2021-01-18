@@ -6,7 +6,7 @@
   <link href="http://lcdzzz.github.io/atom.xml" rel="self"/>
   
   <link href="http://lcdzzz.github.io/"/>
-  <updated>2021-01-18T07:24:43.657Z</updated>
+  <updated>2021-01-18T14:12:11.009Z</updated>
   <id>http://lcdzzz.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java笔记</title>
+    <link href="http://lcdzzz.github.io/2021/01/18/java-bi-ji/"/>
+    <id>http://lcdzzz.github.io/2021/01/18/java-bi-ji/</id>
+    <published>2021-01-18T14:11:16.357Z</published>
+    <updated>2021-01-18T14:12:11.009Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h3><ol><li><p>super是一个关键字，全部小写</p></li><li><p>super和this对比着学习</p><p>this：</p><ul><li><p>能出现在实例方法和构造方法中</p></li><li><p>语法是”this.” 、 “this()”</p></li><li><p>this不能出现在静态方法中</p></li><li><p>大部分条件下是可以省略的</p></li><li><p>this.什么时候不能省略呢？</p><p>在区分局部变量和实例变量的时候不能省略。</p><p>public void setName(string name){</p><p>​    this.name=name;</p><p>}</p><p>this()只能出现在构造方法第一行，通过当前的构造方法去调用“本类”中其他的构造方法，目的是：代码复用。</p></li></ul><p>super：</p><ul><li><p>能出现在实例方法和构造方法中</p></li><li><p>语法是”super.” 、 “super()”</p></li><li><p>super不能出现在静态方法中</p></li><li><p>大部分条件下是可以省略的</p></li><li><p>super.什么时候不能省略呢？？？？？</p><p>在区分局部变量和实例变量的时候不能省略。</p><p>super（)只能出现在构造方法第一行，通过当前的构造方法去调用“父类”中其他的构造方法，目的是：创建子类对象的时候，先初始化父类型特征</p></li></ul></li><li><p>super()</p><p>表示通过子类的构造方法调用父类的构造方法。</p><p>模拟现实世界中：要想要儿子，必须先有父亲。</p><p>//一个类如果没有手动提供任何构造方法，系统会默认提供一个无参数构造方法。</p><p>//一个类如果手动提供了一个构造方法，那么无参数构造方法系统将不会再提供。</p></li><li><p>重要结论：</p><p>当一个构造方法第一行：</p><p>既没有this（）又没有super（）的话，默认会有一个super（）；</p><p>表示通过当前子类的构造方法调用父类的无参数构造方法。</p><p>所以必须保证父类的无参数构造方法是存在的。</p></li><li><p>注意：</p><p>this()和super()不能共存，他们都是只能出现在构造方法的第一行。</p></li><li><p>无论怎么折腾，父类的构造方法是一定会执行的（100%）。</p><p>//在java语言中不管是new什么对象。最后老祖宗的object类的无参数构造方法一定会执行（object类的无参数构造方法是处于“栈顶部”）</p><p>栈顶的特点：</p><p>最后调用，但最先执行结束。</p><p>后进先出原则</p><p>以后写代码的时候，一个类的无参数构造方法还是建议手动写出来。</p><p>如果无参数构造方法丢失的话，可能会影响到子类对象的构建</p></li><li></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;super关键字&quot;&gt;&lt;a href=&quot;#super关键字&quot; class=&quot;headerlink&quot; title=&quot;super关键字&quot;&gt;&lt;/a&gt;super关键字&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;super是一个关键字，全部小写&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;sup</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>常见的DOS命令</title>

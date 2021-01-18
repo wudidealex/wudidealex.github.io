@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, lcdzzz的博客">
+    <meta name="keywords" content="java笔记, lcdzzz的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | lcdzzz的博客</title>
+    <title>java笔记 | lcdzzz的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">java笔记</h1>
                 </div>
             </div>
         </div>
@@ -444,28 +444,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-11-24
+                    2021-01-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-11-25
+                    2021-01-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    73
+                    625
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -480,23 +480,69 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><blockquote>
-<p>$ hexo new “My New Post”</p>
-</blockquote>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><blockquote>
-<p>$ hexo server</p>
-</blockquote>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><blockquote>
-<p>$ hexo generate</p>
-</blockquote>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><blockquote>
-<p>$ hexo deploy</p>
-</blockquote>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h3 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h3><ol>
+<li><p>super是一个关键字，全部小写</p>
+</li>
+<li><p>super和this对比着学习</p>
+<p>this：</p>
+<ul>
+<li><p>能出现在实例方法和构造方法中</p>
+</li>
+<li><p>语法是”this.” 、 “this()”</p>
+</li>
+<li><p>this不能出现在静态方法中</p>
+</li>
+<li><p>大部分条件下是可以省略的</p>
+</li>
+<li><p>this.什么时候不能省略呢？</p>
+<p>在区分局部变量和实例变量的时候不能省略。</p>
+<p>public void setName(string name){</p>
+<p>​    this.name=name;</p>
+<p>}</p>
+<p>this()只能出现在构造方法第一行，通过当前的构造方法去调用“本类”中其他的构造方法，目的是：代码复用。</p>
+</li>
+</ul>
+<p>super：</p>
+<ul>
+<li><p>能出现在实例方法和构造方法中</p>
+</li>
+<li><p>语法是”super.” 、 “super()”</p>
+</li>
+<li><p>super不能出现在静态方法中</p>
+</li>
+<li><p>大部分条件下是可以省略的</p>
+</li>
+<li><p>super.什么时候不能省略呢？？？？？</p>
+<p>在区分局部变量和实例变量的时候不能省略。</p>
+<p>super（)只能出现在构造方法第一行，通过当前的构造方法去调用“父类”中其他的构造方法，目的是：创建子类对象的时候，先初始化父类型特征</p>
+</li>
+</ul>
+</li>
+<li><p>super()</p>
+<p>表示通过子类的构造方法调用父类的构造方法。</p>
+<p>模拟现实世界中：要想要儿子，必须先有父亲。</p>
+<p>//一个类如果没有手动提供任何构造方法，系统会默认提供一个无参数构造方法。</p>
+<p>//一个类如果手动提供了一个构造方法，那么无参数构造方法系统将不会再提供。</p>
+</li>
+<li><p>重要结论：</p>
+<p>当一个构造方法第一行：</p>
+<p>既没有this（）又没有super（）的话，默认会有一个super（）；</p>
+<p>表示通过当前子类的构造方法调用父类的无参数构造方法。</p>
+<p>所以必须保证父类的无参数构造方法是存在的。</p>
+</li>
+<li><p>注意：</p>
+<p>this()和super()不能共存，他们都是只能出现在构造方法的第一行。</p>
+</li>
+<li><p>无论怎么折腾，父类的构造方法是一定会执行的（100%）。</p>
+<p>//在java语言中不管是new什么对象。最后老祖宗的object类的无参数构造方法一定会执行（object类的无参数构造方法是处于“栈顶部”）</p>
+<p>栈顶的特点：</p>
+<p>最后调用，但最先执行结束。</p>
+<p>后进先出原则</p>
+<p>以后写代码的时候，一个类的无参数构造方法还是建议手动写出来。</p>
+<p>如果无参数构造方法丢失的话，可能会影响到子类对象的构建</p>
+</li>
+<li></li>
+</ol>
 
             </div>
             <hr/>
@@ -522,7 +568,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://lcdzzz.github.io/2020/11/24/hello-world/">http://lcdzzz.github.io/2020/11/24/hello-world/</a>
+                    <a href="http://lcdzzz.github.io/2021/01/18/java-bi-ji/">http://lcdzzz.github.io/2021/01/18/java-bi-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -727,54 +773,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/11/24/hexo-bu-fen-ming-ling/">
+                <a href="/2021/01/18/java-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="hexo部分命令">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="java笔记">
                         
-                        <span class="card-title">hexo部分命令</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-24
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            lcdzzz
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/11/24/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">java笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -785,7 +795,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-18
                             </span>
                         <span class="publish-author">
                             
@@ -796,6 +806,43 @@
                     </div>
                 </div>
 
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/01/18/chang-jian-de-dos-ming-ling/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="常见的DOS命令">
+                        
+                        <span class="card-title">常见的DOS命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            lcdzzz
+                            
+                        </span>
+                    </div>
+                </div>
                 
             </div>
         </div>
