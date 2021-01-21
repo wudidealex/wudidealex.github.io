@@ -464,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-01-20
+                    2021-01-21
                 </div>
                 
 
@@ -528,46 +528,45 @@
 </li>
 </ul>
 <h2 id="java自定义函数调用"><a href="#java自定义函数调用" class="headerlink" title="java自定义函数调用"></a>java自定义函数调用</h2><h3 id="一：主类中的自定义函数"><a href="#一：主类中的自定义函数" class="headerlink" title="一：主类中的自定义函数"></a>一：主类中的自定义函数</h3><p>在主类中，如果想要在main函数中调用自定义的其他方法，则这个函数需要使用<u>static关键字</u>定义，否则会报错Cannot make a static reference to the non-static method xx from the type xx，调用的时候<u>直接用函数名</u>就可以了，如下：</p>
-<blockquote>
-<pre><code>   public class create_function &#123;   
-   public static void main(String []args)&#123;　　
-   int s = jia(5,4);
-            System.out.println(s);
-        &#125;
-        static int jia(int a, int b)&#123;
-            System.out.println(&quot;我是自定义相加函数，我被调用了！！&quot;);
-            return a+b;
-        &#125;             
-    &#125;     </code></pre>
-</blockquote>
+<pre class="line-numbers language-none"><code class="language-none"> public class create_function &#123;   
+ public static void main(String []args)&#123;　　
+int s &#x3D; jia(5,4);
+          System.out.println(s);
+      &#125;
+      static int jia(int a, int b)&#123;
+          System.out.println(&quot;我是自定义相加函数，我被调用了！！&quot;);
+          return a+b;
+      &#125;             
+  &#125;     <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>下面使用static关键字定义了一个“+”运算的函数，在main中调用时，直接使用函数名，括号中加参数就可以了。输出结果如下：</p>
 <p>​        我是自定义相加函数，我被调用了！！<br>​        9</p>
 <h3 id="二：自定义类中函数的调用"><a href="#二：自定义类中函数的调用" class="headerlink" title="二：自定义类中函数的调用"></a>二：自定义类中函数的调用</h3><p>自定义类中函数的调用有两种情况，静态函数和非静态函数，<u>非静态函数的调用需要先声明一个类实例，通过实例调用</u>。静态函数的调用可以通过实例，也可以直接使用类名调用(建议使用这种，要不会造成内存空间的浪费。)，如下：</p>
-<blockquote>
-<pre><code>   public class create_function &#123;    
-   public static void main(String []args)&#123;
-           Y y =new Y();
+<pre class="line-numbers language-none"><code class="language-none">public class create_function &#123;    
+public static void main(String []args)&#123;
+           Y y &#x3D;new Y();                
+
+        int s2 &#x3D; y.cheng(3,5);&#x2F;&#x2F;声明了y这个实例
+        System.out.println(s2);&#x2F;&#x2F;直接用Y这个类调用
+        
+        int s3 &#x3D; Y.chu(8, 2);
+        System.out.println(s3);
+    &#125; 
+&#125;
+
+class Y&#123;
+    int cheng(int a,int b)&#123;
+        System.out.println(&quot;我是自定义类中的乘方法，我被调用了！&quot;);
+        return a*b;
+    &#125;
+    static int chu(int c,int d)&#123;
+       System.out.println(&quot;我是自定义类中的除方法，我被调用了！&quot;);
+        return c&#x2F;d;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-           int s2 = y.cheng(3,5);//声明了y这个实例
-           System.out.println(s2);//直接用Y这个类调用
 
-           int s3 = Y.chu(8, 2);
-           System.out.println(s3);
-       &#125; 
-   &#125;
-
-   class Y&#123;
-       int cheng(int a,int b)&#123;
-           System.out.println(&quot;我是自定义类中的乘方法，我被调用了！&quot;);
-           return a*b;
-       &#125;
-       static int chu(int c,int d)&#123;
-          System.out.println(&quot;我是自定义类中的除方法，我被调用了！&quot;);
-           return c/d;
-       &#125;
-   &#125;</code></pre>
-</blockquote>
 <p>在下面，自定义了一个Y类，cheng方法是非静态方法，必须通过实例y调用，chu方法是静态方法，使用类名直接调用。输出结果如下：</p>
 <p>​        我是自定义类中的乘方法，我被调用了！<br>​        15<br>​        我是自定义类中的除方法，我被调用了！<br>​        4</p>
 <h2 id="String-valueOf-方法的使用"><a href="#String-valueOf-方法的使用" class="headerlink" title="String.valueOf()方法的使用"></a>String.valueOf()方法的使用</h2><h3 id="一：由基本数据形态转换成String"><a href="#一：由基本数据形态转换成String" class="headerlink" title="一：由基本数据形态转换成String"></a>一：由基本数据形态转换成String</h3><p>String 类别中已经提供了将基本数据型态转换成 String 的 static 方法 ，也就是 <strong>String.valueOf()</strong> 这个参数多载的方法 ：</p>
@@ -582,7 +581,7 @@
 <p>（5） <strong>Integer.parseInt(String s)</strong> : 将 s 转换成 int </p>
 <p>（6） <strong>Long.parseLong(String s)</strong> : 将 s 转换成 long</p>
 <h2 id="终止程序的执行，退出JVM"><a href="#终止程序的执行，退出JVM" class="headerlink" title="终止程序的执行，退出JVM"></a>终止程序的执行，退出JVM</h2><blockquote>
-<p>   system.exit(0);</p>
+<p>system.exit(0);</p>
 </blockquote>
 
             </div>

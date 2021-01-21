@@ -451,14 +451,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-11-28
+                    2021-01-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    516
+                    550
                 </div>
                 
 
@@ -484,36 +484,37 @@
 <li><p>当java程序在idea上可以执行，但在cmd时报错：编码GBK 的不可映射字符时，通常都是因为GB2312编码的问题。</p>
 </li>
 <li><p>比如这个程序。在idea上运行时不会有问题的。用cmd运行时问题就出在第10行的<code>int xd =0//向导数</code>上，其中的“向导数”出了问题。</p>
-<blockquote>
-<pre><code>   Scanner in = new Scanner(System.in);
-   while (in.hasNext()) &#123;
-       int line = in.nextInt();
-       while (line-- &gt; 0) &#123;
-           int n = in.nextInt();//人数
-           int xd = 0;//向导数
-           int qx = n / 2;//抢险
-           int yl =(n-qx) *2 / 3;//医疗
-           int tx = n-qx - yl;//通讯
-           if (qx % 10 != 0) &#123;
-               xd = xd + qx / 10 + 1;
-           &#125; else &#123;
-               xd = xd + qx / 10;
-           &#125;
-           if (yl % 10 != 0) &#123;
-               xd = xd + yl / 10 + 1;
-           &#125; else &#123;
-               xd = xd + yl / 10;
-           &#125;
-           if (tx % 10 != 0) &#123;
-               xd = xd + tx / 10 + 1;
-           &#125; else &#123;
-               xd = xd + tx / 10;
-           &#125;
-           System.out.println(xd);
-       &#125;
-   &#125;</code></pre>
-</blockquote>
 </li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">Scanner in &#x3D; new Scanner(System.in);
+while (in.hasNext()) &#123;
+   int line &#x3D; in.nextInt();
+    while (line-- &gt; 0) &#123;
+        int n &#x3D; in.nextInt();&#x2F;&#x2F;人数
+        int xd &#x3D; 0;&#x2F;&#x2F;向导数
+        int qx &#x3D; n &#x2F; 2;&#x2F;&#x2F;抢险
+        int yl &#x3D;(n-qx) *2 &#x2F; 3;&#x2F;&#x2F;医疗
+        int tx &#x3D; n-qx - yl;&#x2F;&#x2F;通讯
+        if (qx % 10 !&#x3D; 0) &#123;
+            xd &#x3D; xd + qx &#x2F; 10 + 1;
+        &#125; else &#123;
+            xd &#x3D; xd + qx &#x2F; 10;
+        &#125;
+        if (yl % 10 !&#x3D; 0) &#123;
+            xd &#x3D; xd + yl &#x2F; 10 + 1;
+        &#125; else &#123;
+            xd &#x3D; xd + yl &#x2F; 10;
+        &#125;
+        if (tx % 10 !&#x3D; 0) &#123;
+            xd &#x3D; xd + tx &#x2F; 10 + 1;
+        &#125; else &#123;
+            xd &#x3D; xd + tx &#x2F; 10;
+        &#125;
+        System.out.println(xd);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
 <li><p>解决方法</p>
 <ol>
 <li><p>检查</p>
