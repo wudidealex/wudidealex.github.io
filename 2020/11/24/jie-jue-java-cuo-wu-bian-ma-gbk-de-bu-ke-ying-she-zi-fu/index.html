@@ -458,7 +458,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    550
+                    515
                 </div>
                 
 
@@ -486,33 +486,33 @@
 <li><p>比如这个程序。在idea上运行时不会有问题的。用cmd运行时问题就出在第10行的<code>int xd =0//向导数</code>上，其中的“向导数”出了问题。</p>
 </li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">Scanner in &#x3D; new Scanner(System.in);
-while (in.hasNext()) &#123;
-   int line &#x3D; in.nextInt();
-    while (line-- &gt; 0) &#123;
-        int n &#x3D; in.nextInt();&#x2F;&#x2F;人数
-        int xd &#x3D; 0;&#x2F;&#x2F;向导数
-        int qx &#x3D; n &#x2F; 2;&#x2F;&#x2F;抢险
-        int yl &#x3D;(n-qx) *2 &#x2F; 3;&#x2F;&#x2F;医疗
-        int tx &#x3D; n-qx - yl;&#x2F;&#x2F;通讯
-        if (qx % 10 !&#x3D; 0) &#123;
-            xd &#x3D; xd + qx &#x2F; 10 + 1;
-        &#125; else &#123;
-            xd &#x3D; xd + qx &#x2F; 10;
-        &#125;
-        if (yl % 10 !&#x3D; 0) &#123;
-            xd &#x3D; xd + yl &#x2F; 10 + 1;
-        &#125; else &#123;
-            xd &#x3D; xd + yl &#x2F; 10;
-        &#125;
-        if (tx % 10 !&#x3D; 0) &#123;
-            xd &#x3D; xd + tx &#x2F; 10 + 1;
-        &#125; else &#123;
-            xd &#x3D; xd + tx &#x2F; 10;
-        &#125;
-        System.out.println(xd);
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Scanner</span> in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>in<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+   <span class="token keyword">int</span> line <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>line<span class="token operator">--</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> n <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//人数</span>
+        <span class="token keyword">int</span> xd <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//向导数</span>
+        <span class="token keyword">int</span> qx <span class="token operator">=</span> n <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span><span class="token comment">//抢险</span>
+        <span class="token keyword">int</span> yl <span class="token operator">=</span><span class="token punctuation">(</span>n<span class="token operator">-</span>qx<span class="token punctuation">)</span> <span class="token operator">*</span><span class="token number">2</span> <span class="token operator">/</span> <span class="token number">3</span><span class="token punctuation">;</span><span class="token comment">//医疗</span>
+        <span class="token keyword">int</span> tx <span class="token operator">=</span> n<span class="token operator">-</span>qx <span class="token operator">-</span> yl<span class="token punctuation">;</span><span class="token comment">//通讯</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>qx <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            xd <span class="token operator">=</span> xd <span class="token operator">+</span> qx <span class="token operator">/</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            xd <span class="token operator">=</span> xd <span class="token operator">+</span> qx <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>yl <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            xd <span class="token operator">=</span> xd <span class="token operator">+</span> yl <span class="token operator">/</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            xd <span class="token operator">=</span> xd <span class="token operator">+</span> yl <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>tx <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            xd <span class="token operator">=</span> xd <span class="token operator">+</span> tx <span class="token operator">/</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            xd <span class="token operator">=</span> xd <span class="token operator">+</span> tx <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>xd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li><p>解决方法</p>
@@ -1046,7 +1046,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.5k</span>&nbsp;字
+                class="white-color">4.4k</span>&nbsp;字
             
             
             
