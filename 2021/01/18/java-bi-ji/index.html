@@ -464,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-01-21
+                    2021-01-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.3k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    4 Min
+                    7 Min
                 </div>
                 
 
@@ -579,16 +579,16 @@
 </li>
 <li><p>语法是”this.” 、 “this()”</p>
 </li>
-<li><p>this不能出现在静态方法中</p>
+<li><p><strong>this不能出现在静态方法中</strong></p>
 </li>
 <li><p>大部分条件下是可以省略的</p>
 </li>
 <li><p>this.什么时候不能省略呢？</p>
-<p><u>在区分局部变量和实例变量的时候不能省略。</u></p>
+<p><strong>在区分局部变量和实例变量的时候不能省略。</strong></p>
 <p><code>public void setName(string name)&#123;</code></p>
 <p>​    <code>this.name=name;</code></p>
 <p><code>&#125;</code></p>
-<p>this()只能出现在构造方法第一行，通过当前的构造方法去调用“本类”中其他的构造方法，目的是：代码复用。</p>
+<p><strong>this()只能出现在构造方法第一行</strong>，通过当前的构造方法去调用“本类”中其他的构造方法，目的是：代码复用。</p>
 </li>
 </ul>
 <p>super：</p>
@@ -597,14 +597,14 @@
 </li>
 <li><p>语法是”super.” 、 “super()”</p>
 </li>
-<li><p>super不能出现在静态方法中</p>
+<li><p><strong>super不能出现在静态方法中</strong></p>
 </li>
 <li><p>大部分条件下是可以省略的</p>
 </li>
 <li><p>super.什么时候不能省略呢？</p>
-<p><u>父类和子类中有同名属性或者说有同样的方法，</u></p>
-<p><u>想在子类中访问父类的，super. 不能省略。</u></p>
-<p>super（)只能出现在构造方法第一行，通过当前的构造方法去调用“父类”中其他的构造方法，目的是：创建子类对象的时候，先初始化父类型特征</p>
+<p><strong>父类和子类中有同名属性或者说有同样的方法，</strong></p>
+<p><strong>想在子类中访问父类的，super. 不能省略。</strong></p>
+<p><strong>super（)只能出现在构造方法第一行</strong>，通过当前的构造方法去调用“父类”中其他的构造方法，目的是：创建子类对象的时候，先初始化父类型特征</p>
 </li>
 </ul>
 </li>
@@ -615,15 +615,15 @@
 <p>//一个类如果手动提供了一个构造方法，那么无参数构造方法系统将不会再提供。</p>
 </li>
 <li><p>重要结论：</p>
-<p>当一个构造方法第一行：</p>
-<p>既没有this（）又没有super（）的话，默认会有一个super（）；</p>
-<p>表示通过当前子类的构造方法调用父类的无参数构造方法。</p>
-<p>所以必须保证父类的无参数构造方法是存在的。</p>
+<p><strong>当一个构造方法第一行：</strong></p>
+<p><strong>既没有this（）又没有super（）的话，默认会有一个super（）；</strong></p>
+<p><strong>表示通过当前子类的构造方法调用父类的无参数构造方法。</strong></p>
+<p><strong>所以必须保证父类的无参数构造方法是存在的。</strong></p>
 </li>
 <li><p>注意：</p>
 <p>this()和super()不能共存，他们都是只能出现在构造方法的第一行。</p>
 </li>
-<li><p>无论怎么折腾，父类的构造方法是一定会执行的（100%）。</p>
+<li><p><strong>无论怎么折腾，父类的构造方法是一定会执行的（100%）。</strong></p>
 <p>//在java语言中不管是new什么对象。最后老祖宗的object类的无参数构造方法一定会执行（object类的无参数构造方法是处于“栈顶部”）</p>
 <p>栈顶的特点：</p>
 <p>最后调用，但最先执行结束。</p>
@@ -642,12 +642,92 @@
 <li><p>在子类中访问父类私有的数据，使用super.没有权限的</p>
 <p>但父类私有的构造方法，可以用super（实参）去构造。</p>
 </li>
-<li><p>super的使用：</p>
-<p>super.属性名    【访问父类的属性】</p>
-<p>super.方法名(实参)   【访问父类的方法】</p>
-<p>super.(实参)   【调用父类的构造方法】</p>
+</ol>
+<pre class="line-numbers language-super的使用" data-language="super的使用"><code class="language-super的使用">super.属性名    【访问父类的属性】
+    
+super.方法名(实参)   【访问父类的方法】
+    
+super.(实参)   【调用父类的构造方法】
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+
+
+<h2 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h2><ol>
+<li><p>final修饰的变量？</p>
+<p><strong>final修饰的局部标量，一但被赋值，就不能重新赋值【final修饰的变量只能赋一次值】</strong></p>
 </li>
 </ol>
+<ol start="2">
+<li><p>fianl修饰的方法？</p>
+<p><strong>final修饰的方法无法被覆盖，被重写</strong></p>
+</li>
+</ol>
+<ol start="3">
+<li><p>fianl修饰的类？</p>
+<p><strong>final修饰的类无法被继承</strong></p>
+</li>
+</ol>
+<ol start="4">
+<li>final控制不了能不能调用的问题，final管的是：最后的，不能变的，不能改的。</li>
+</ol>
+<ol start="5">
+<li><p>final修饰的变量，如果这个变量是一个人”引用“</p>
+<p>引用也是一个变量，所以也是不能变的</p>
+<p><code>*final person p=new person(30);*</code><br><code>*p=new Person(30)//错误！无法为最终变量p分配值*</code></p>
+</li>
+</ol>
+<p>   <strong>final修饰的引用：</strong></p>
+<p>  该引用只能指向1个对象，并且它只能永远指向该对象，无法指向其他对象。<br>  并且在该方法执行过程中，该引用指向对象后，该对象不会被垃圾回收器回收。</p>
+<p>  直到当前方法结束，才会释放空间。</p>
+<p>  虽然final的引用指向对象A后，不能再重新指向对象B。<br>  但是对象内部的数据可以被修改。</p>
+<ol start="6">
+<li><p><strong>final修饰的实例变量，系统不负责赋默认值，要求程序员必须手动赋值。</strong></p>
+<p>这个手动赋值，在变量后面赋值可以，在构造方法赋值也可以。</p>
+<p>final修饰的实例变量一般添加static修饰</p>
+<p><em>解释：</em><br><em>i永远都是10，创建100个对象，i也是10</em><br><em>i是10是永远都不会改变的，既然这样，没必要声明为实例变量，最好是静态，节省内存空间</em></p>
+<p><strong>static final联合修饰的变量成为“常量”。</strong></p>
+</li>
+</ol>
+<p>​    例：<code>public static final double PI=3.1415926;</code></p>
+<p>   常量名建议大写，每个单词之间采用下划线来衔接。</p>
+<p>   <em>常量：实际上常量和静态变量一样，区别在于：</em></p>
+<p>   <em>常量的值不能变。</em></p>
+<p>   <em>常量和静态变量，都是存储在方法去，并且都是类加载时初始化</em>。</p>
+<h2 id="抽象类（abstract）"><a href="#抽象类（abstract）" class="headerlink" title="抽象类（abstract）"></a>抽象类（abstract）</h2><ol>
+<li><p>抽象类怎么定义？</p>
+<p>在class钱添加abstract关键字。</p>
+</li>
+<li><p><strong>抽象类是无法实例化的，无法创建对象的，所以抽象类是用来被子类继承的</strong>。</p>
+</li>
+<li><p>final和abstract不能联合使用，这两个关键字是对立的。</p>
+</li>
+<li><p>抽象类的子类可以是抽象类，也可以不是。</p>
+</li>
+<li><p>抽象类虽然无法实例化，但是抽象类有构造方法，这个构造方法是供子类使用的。</p>
+</li>
+<li><p><strong>抽象类中不一定有抽象方法，但是抽象方法必须出现在抽象类中。</strong></p>
+</li>
+<li><p>抽象方法怎么定义？</p>
+<p><code>public abstract void dosome();</code></p>
+</li>
+<li><p><strong>一个非抽象的类，继承抽象类，必须将抽象类中的抽象方法进行覆盖/重写/实现。</strong></p>
+</li>
+<li><p>面试题（判断）：java语言中凡是没有方法体的方法都是抽象方法。（×）</p>
+<p><em>object类中就有很多方法没有方法体，都是以“;”结尾的，但他们不是抽象方法，例如：</em></p>
+<p><em><code>public native int hashCode();</code></em></p>
+<p><em>这个方法底层调用了C++写的动态链接库。</em></p>
+<p><em>前面修饰符列表中没有：abstract。有一个native表示调用JVM本地程序。</em></p>
+<p>​    </p>
+</li>
+</ol>
+<p>   ​    </p>
 
             </div>
             <hr/>
@@ -1178,7 +1258,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.5k</span>&nbsp;字
+                class="white-color">5.3k</span>&nbsp;字
             
             
             

@@ -583,12 +583,24 @@
 <h2 id="终止程序的执行，退出JVM"><a href="#终止程序的执行，退出JVM" class="headerlink" title="终止程序的执行，退出JVM"></a>终止程序的执行，退出JVM</h2><blockquote>
 <p>system.exit(0);</p>
 </blockquote>
-<h2 id="强行转换类型"><a href="#强行转换类型" class="headerlink" title="强行转换类型"></a>强行转换类型</h2><p>调用子类中特有的方法是，需要向下转型</p>
+<h2 id="强行转换类型（强制类型转换-向下转型）"><a href="#强行转换类型（强制类型转换-向下转型）" class="headerlink" title="强行转换类型（强制类型转换/向下转型）"></a>强行转换类型（强制类型转换/向下转型）</h2><p>调用子类中特有的方法是，需要向下转型</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>c <span class="token keyword">instanceof</span> <span class="token class-name">D</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">//c指向的对象如果确实是一个D类型的</span>
      <span class="token class-name">D</span> d1<span class="token operator">=</span><span class="token punctuation">(</span><span class="token class-name">D</span><span class="token punctuation">)</span>c<span class="token punctuation">;</span>
     d1<span class="token punctuation">.</span><span class="token function">doOther</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//doOther是D类特有的方法</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
+
+
+
+
+
+
+
+
+
+
+<h2 id="局部变量和成员变量"><a href="#局部变量和成员变量" class="headerlink" title="局部变量和成员变量"></a>局部变量和成员变量</h2><p>局部变量是没有初始值的</p>
+<p>成员变量有初始值（0  0.0  null）</p>
 
             </div>
             <hr/>
@@ -1105,7 +1117,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.5k</span>&nbsp;字
+                class="white-color">5.3k</span>&nbsp;字
             
             
             
