@@ -471,14 +471,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2.9k
+                    3.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    10 Min
+                    11 Min
                 </div>
                 
 
@@ -786,6 +786,53 @@
 <br>
 
 <p>以后进行大项目的开发，一般都是讲项目分离成一个模块一个模块的，模块和模块之间采用接口衔接，降低耦合度 </p>
+<h3 id="类型和类型之间的关系："><a href="#类型和类型之间的关系：" class="headerlink" title="类型和类型之间的关系："></a>类型和类型之间的关系：</h3><p>is a（继承）、has a（关联）、 like a（实现）</p>
+<ul>
+<li><p>is a:</p>
+<p>Ca is a Animal(猫是一个动物)</p>
+<p>凡是能够满足is a的表示“继承关系”</p>
+<p><code>A extends B;</code></p>
+</li>
+<li><p>has a:</p>
+<p>I has a Pen(我有一支笔)</p>
+<p>凡是能够满足has a 关系的表示“关联关系”</p>
+<p>关联关系通常以“属性”的形式存在。</p>
+<p><code>A&#123;</code></p>
+<p><code>   B b;</code></p>
+<p><code>&#125;</code></p>
+</li>
+<li><p>like a：</p>
+<p>Cooker like a FoodMenu(厨师想一个菜单一样)、</p>
+<p>凡是能够满足like a 关系的表示“实现关系”</p>
+<p>实现关系通常是：类实现接口。</p>
+<p><code>A implements B;</code></p>
+</li>
+</ul>
+<h3 id="抽象类和接口有什么区别"><a href="#抽象类和接口有什么区别" class="headerlink" title="抽象类和接口有什么区别"></a>抽象类和接口有什么区别</h3><p><em>这里直说下抽象类和接口在语法上的区别。至于以后抽象类和接口应该怎么进行选择，通过后面的项目去体会。</em></p>
+<br>
+
+<p>抽象类是半抽象的</p>
+<p>接口是完全抽象的</p>
+<br>
+
+<p>抽象类中有构造方法。</p>
+<p>接口中没有构造方法。</p>
+<br>
+
+<p>类与类之间只能单继承。</p>
+<p>接口与接口直接支持多继承。</p>
+<br>
+
+<p>一个抽象类只能继承一个类（单继承）。</p>
+<p>一个类可以同时实现多个接口。</p>
+<br>
+
+<p>接口中只允许出现常量和抽象方法。</p>
+<br>
+
+<p>以后接口使用的比抽象类多。一般抽象类使用的还是少。</p>
+<p>接口一般都是对“行为”的抽象。</p>
+<p>抽象类既可以抽象行为又可以抽象数据。</p>
 
             </div>
             <hr/>
@@ -1316,7 +1363,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6.1k</span>&nbsp;字
+                class="white-color">6.5k</span>&nbsp;字
             
             
             
