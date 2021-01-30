@@ -471,14 +471,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    3.3k
+                    3.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    11 Min
+                    13 Min
                 </div>
                 
 
@@ -511,7 +511,9 @@
 <li><p>编写代码，在src目录下新建类，写代码，并运行。</p>
 </li>
 </ol>
-<h3 id="关于IDEA工具的快捷键以及一些简单的设置"><a href="#关于IDEA工具的快捷键以及一些简单的设置" class="headerlink" title="关于IDEA工具的快捷键以及一些简单的设置"></a>关于IDEA工具的快捷键以及一些简单的设置</h3><h4 id="字体设置"><a href="#字体设置" class="headerlink" title="字体设置"></a>字体设置</h4><p>file–&gt;setting–&gt;输入font–&gt;设置字体样式以及字号大小、</p>
+<p><br><br></p>
+<h3 id="关于IDEA工具的快捷键以及一些简单的设置"><a href="#关于IDEA工具的快捷键以及一些简单的设置" class="headerlink" title="关于IDEA工具的快捷键以及一些简单的设置"></a>关于IDEA工具的快捷键以及一些简单的设置</h3><h4 id="字体设置"><a href="#字体设置" class="headerlink" title="字体设置"></a>字体设置</h4><p>file–&gt;setting–&gt;输入font–&gt;设置字体样式以及字号大小</p>
+<p><br><br></p>
 <h4 id="快捷方式"><a href="#快捷方式" class="headerlink" title="快捷方式"></a>快捷方式</h4><ul>
 <li>psvm（main方法）        sout（system.out.println)</li>
 </ul>
@@ -783,6 +785,7 @@
 <p><code>if(m instanceof K)&#123;</code></p>
 <p><code>K k = (K) m；</code></p>
 <p><code>&#125;</code></p>
+<p><br><br></p>
 </li>
 </ol>
 <h3 id="接口在开发中的作用"><a href="#接口在开发中的作用" class="headerlink" title="接口在开发中的作用"></a>接口在开发中的作用</h3><p>注意：接口在开发中的作用，类似于多态在开发中的作用。</p>
@@ -809,6 +812,7 @@
 <p>面向抽象编程这句话以后可以修改为：面向接口编程。</p>
 <p>有了剪口就有了可插拔，可插拔表示扩展力很强，不是焊接死的。</p>
 <p>主板和内存条之间有插槽，这个插槽就是接口，内存条坏了，可以重新买一个换下来，这叫做高扩展性（低耦合度）。</p>
+<p><br><br></p>
 <p><strong>总结一句话：三个字<u>解耦合</u></strong></p>
 <p>面向接口编程，可以降低程序耦合度，提高程序扩展力。符合ocp开发原则 。接口的使用离不开多态机制。（接口+多态才可以打到降低耦合度。）</p>
 <p> 接口可以解耦合，解开的是谁和谁的耦合？？？</p>
@@ -894,9 +898,92 @@
 <li><p>package出现在java源文件第一行。</p>
 </li>
 <li><p>带有包名怎么编译？</p>
-<p>javac -d .xxx.java</p>
+<p>javac -d . xxx.java</p>
+</li>
+<li><p>怎么运行？</p>
+<p>java 完整类名</p>
+<p>例：<code>java com.bjpowernode.javase.chapter17.HelloWorld</code></p>
+<br>
+
+<br>
+
 </li>
 </ol>
+<h3 id="import"><a href="#import" class="headerlink" title="import"></a>import</h3><p>import什么时候不需要？</p>
+<ul>
+<li>java.lang不需要</li>
+<li>同包下不需要</li>
+<li>其他一律都需要</li>
+</ul>
+<p>怎么用？</p>
+<ul>
+<li>import 完整类名</li>
+<li>import 包名.*;</li>
+</ul>
+<p><br><br><br><br></p>
+<h2 id="访问控制权限"><a href="#访问控制权限" class="headerlink" title="访问控制权限"></a>访问控制权限</h2><h3 id="有哪些访问控制权限？"><a href="#有哪些访问控制权限？" class="headerlink" title="有哪些访问控制权限？"></a>有哪些访问控制权限？</h3><ul>
+<li>private 私有</li>
+<li>protect 受保护</li>
+<li>public 公开</li>
+<li> ____    默认</li>
+</ul>
+<p><br><br></p>
+<h3 id="以上四种访问控制权限，控制的范围是什么？"><a href="#以上四种访问控制权限，控制的范围是什么？" class="headerlink" title="以上四种访问控制权限，控制的范围是什么？"></a>以上四种访问控制权限，控制的范围是什么？</h3><table>
+<thead>
+<tr>
+<th>访问控制修饰符</th>
+<th>本类</th>
+<th>同包</th>
+<th>子类</th>
+<th>任意位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>默认</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>private</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+</tbody></table>
+<p>public&gt;protected&gt;默认&gt;private</p>
+<p><br><br></p>
+<h3 id="访问控制权限修饰符可以修饰什么"><a href="#访问控制权限修饰符可以修饰什么" class="headerlink" title="访问控制权限修饰符可以修饰什么"></a>访问控制权限修饰符可以修饰什么</h3><ul>
+<li>属性（4个都行）</li>
+<li>方法（4个都能用）</li>
+<li>类（public 和默认可以，其他不行）</li>
+<li>接口（public 和默认可以，其他不行）</li>
+</ul>
+<p><br><br><br><br></p>
+<h2 id="JDK类库的根类：Object"><a href="#JDK类库的根类：Object" class="headerlink" title="JDK类库的根类：Object"></a>JDK类库的根类：Object</h2><p>这个老祖宗中的方法都是所有子类通用的，任何一个类默认继承Object，就算没有继承，也会间接继承</p>
+<h3 id="Object类当中有哪些常用的方法？"><a href="#Object类当中有哪些常用的方法？" class="headerlink" title="Object类当中有哪些常用的方法？"></a>Object类当中有哪些常用的方法？</h3><p>怎么找？</p>
+<ol>
+<li>去源代码当中。（但这种方式比较麻烦，源代码也比较难）</li>
+<li>去查阅java的类库的帮助文档。</li>
+</ol>
+<p>什么事API?</p>
+<p>​      应用程序的编程接口。整个JDK的类库就是一个javase的API（application program interface）。每一个API都会配置一套API帮助文档。SUN公司提前写好的这套类库就是API。（一般每一份API都对应一份API帮助文档。）</p>
 
             </div>
             <hr/>
@@ -1427,7 +1514,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6.5k</span>&nbsp;字
+                class="white-color">6.9k</span>&nbsp;字
             
             
             
