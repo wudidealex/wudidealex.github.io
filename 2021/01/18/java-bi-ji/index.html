@@ -464,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-01-26
+                    2021-01-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    3.6k
+                    4.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    13 Min
+                    16 Min
                 </div>
                 
 
@@ -983,7 +983,102 @@
 <li>去查阅java的类库的帮助文档。</li>
 </ol>
 <p>什么事API?</p>
-<p>​      应用程序的编程接口。整个JDK的类库就是一个javase的API（application program interface）。每一个API都会配置一套API帮助文档。SUN公司提前写好的这套类库就是API。（一般每一份API都对应一份API帮助文档。）</p>
+<p>​      应用程序的编程接口。整个JDK的类库就是一个javase的API（application program interface）。每一个API都会配置一套API帮助文档。SUN公司提前写好的这套类库就是API。（一般每一份API都对应一份API帮助文档。）、</p>
+<p>目前为止我们只需要知道这几个方法即可：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">protected</span> <span class="token class-name">Object</span> <span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span>； <span class="token comment">//负责对象克隆的</span>
+<span class="token keyword">int</span> <span class="token function">hashOde</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//换区对象哈希值的一个方法</span>
+<span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//判断两个对象是否相等</span>
+<span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//讲哦对象转换成字符串形式</span>
+<span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">finalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//垃圾回收器负责调用的方法 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><br><br></p>
+<h3 id="toString-方法"><a href="#toString-方法" class="headerlink" title="toString()方法"></a>toString()方法</h3><p>以后所有类的toString()方法是需要重写的，重写规则，越简单越明了就好。</p>
+<p>System.out.println(引用)；这里会自动调用“引用”的toString()方法。</p>
+<p>String类是SUN写的，toString方法已经重写了。</p>
+<p><br><br></p>
+<h3 id="equals-方法"><a href="#equals-方法" class="headerlink" title="equals()方法"></a>equals()方法</h3><p>以后所有类的equals方法也需要重写，因为object中的equals方法比较的是两个对象的内存地址，我们应该比较内容，所以需要重写。</p>
+<p>重写规则：自己定，主要看是什么和什么相等时表示里欧昂个对象相等。</p>
+<p>基本数据类型比较实用：==</p>
+<p>对象和对象比较：调用equals方法</p>
+<p>String类是SUN编写的，所以Strng类的equals方法重写了。</p>
+<p>以后判断两个字符串是否相等，最好不要实用==。要调用字符串对象的equals方法。</p>
+<p><br><br></p>
+<h3 id="finalize-方法"><a href="#finalize-方法" class="headerlink" title="finalize()方法"></a>finalize()方法</h3><ol>
+<li><p>在Object类中的源代码：</p>
+<p><code>protected void finaliz() throw Throwable&#123; &#125;</code></p>
+<p>GC：负责带一把过finalize()方法</p>
+</li>
+<li><p>finalize()方法只有一个方塔提，里面没有代码，而且这个方法是protected修饰的。</p>
+</li>
+<li><p>这个方法不需要程序员手动调用，JVM的垃圾回收器会负责调调用这个方法。</p>
+<p>不像equals toString ,equals和toString（）方法是需要你写代码调用的。</p>
+<p>finalize（）只需要重写，重写玩将来会自动会有程序来调用。</p>
+</li>
+<li><p>finalize()方法的执行时机</p>
+<p>当一个java对象即将被垃圾回收器回收的时候，垃圾回收器负责调用fianlize()方法。</p>
+</li>
+<li><p>finalize()方法实际上是SUN公司为java程序员准备的一个实际，垃圾销毁时机。</p>
+<p>如果希望在对象销毁时机执行一段代码的话，这段代码要写在finalize()方法中。</p>
+</li>
+<li><p>静态代码块的作用是什么？</p>
+<p>static{</p>
+<p>   …</p>
+<p>}</p>
+<p>静态代码块在类加载的时候执行，并且只执行一次，这是一个SUN准备的类加载时机。</p>
+<p>finalize()方法同样是sun为程序员准备的一个时机。</p>
+<p>这个时机是垃圾回收时机。</p>
+</li>
+<li><p>有段代码可以建议垃圾回收期启动</p>
+<p><code>System.gc();   // 建议激动垃圾回收器</code></p>
+</li>
+</ol>
+<p><br><br></p>
+<h3 id="hashCode方法："><a href="#hashCode方法：" class="headerlink" title="hashCode方法："></a>hashCode方法：</h3><ol>
+<li><p>在object中的hashCode方法是怎么样的?</p>
+<p>public native int hashCode();</p>
+<p>这个方法不是抽象方法，带有native关键字，底层调用c++程序。</p>
+</li>
+<li><p>hashCode()fang方法返回的是哈线：</p>
+<p>实际上就是java对象的内存地址，经过哈希算法，得出一个值。</p>
+<p>所以hashCode（）方法的执行结果可以等同看做一个java对象的内存地址</p>
+</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> main <span class="token punctuation">(</span>string<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        
+        <span class="token class-name">Object</span> o <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> hashCodeValue <span class="token operator">=</span> o<span class="token punctuation">.</span><span class="token function">hashcode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//对象内存地址经过哈希算法转换的一个数字。可以等同看做内存地址。</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>hashCodeValue<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//89641564</span>
+      	
+        <span class="token class-name">MyClass</span> mc<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">MyClass</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>mc<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//5641864654</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">class</span> <span class="token class-name">MyClass</span><span class="token punctuation">&#123;</span>
+    
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             </div>
             <hr/>
@@ -1514,7 +1609,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6.9k</span>&nbsp;字
+                class="white-color">7.7k</span>&nbsp;字
             
             
             
