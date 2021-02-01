@@ -471,7 +471,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    4.4k
+                    4.7k
                 </div>
                 
 
@@ -570,6 +570,8 @@
 </ul>
 <ul>
 <li><p>idea当中复制一行是ctrl+d</p>
+</li>
+<li><p>idea工具中纠正错误的快捷键：alt+回车</p>
 <br>
 
 <br>
@@ -1062,6 +1064,36 @@
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
+
+<h2 id="匿名内部类："><a href="#匿名内部类：" class="headerlink" title="匿名内部类："></a>匿名内部类：</h2><ol>
+<li><p>内部类：在类的内部又定义了一个新的类。被称为内部类。</p>
+</li>
+<li><p>内部类的分类：</p>
+<p>静态内部类：类似于静态变量</p>
+<p>实例内部类：类似于实例变量</p>
+<p>局部内部类：类似于局部变量</p>
+</li>
+<li><p>使用内部类编写的代码，可读性差，尽量别用</p>
+</li>
+<li><p>匿名内部类是局部内部类的一种。因为这个类没有名字而得名，叫做匿名内部类。</p>
+</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">mm<span class="token punctuation">.</span><span class="token function">mySum</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Compute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> a<span class="token operator">+</span>b<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/*
+mm是对象，使用了mySum这个方法
+compute是一个接口，不能直接new对象，这里使用了匿名内部类。如果不用匿名内部类，那么需要再创建一个class，去implements接口
+*/</span>
+
+<span class="token comment">//以下是不使用匿名内部类的方法</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ComputeImpl</span> <span class="token keyword">implements</span> <span class="token class-name">Compute</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> sum <span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1609,7 +1641,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.7k</span>&nbsp;字
+                class="white-color">7.9k</span>&nbsp;字
             
             
             
