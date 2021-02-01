@@ -460,14 +460,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-01-21
+                    2021-02-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    698
+                    789
                 </div>
                 
 
@@ -489,7 +489,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="acm做题部分记录"><a href="#acm做题部分记录" class="headerlink" title="acm做题部分记录"></a>acm做题部分记录</h1><h2 id="hdoj-2036改革春风吹满地"><a href="#hdoj-2036改革春风吹满地" class="headerlink" title="hdoj 2036改革春风吹满地"></a>hdoj 2036改革春风吹满地</h2><ul>
+                <h2 id="hdoj-2036改革春风吹满地"><a href="#hdoj-2036改革春风吹满地" class="headerlink" title="hdoj 2036改革春风吹满地"></a>hdoj 2036改革春风吹满地</h2><ul>
 <li>简述：（变成一般问题的话）一个多边形告诉你边数（定点数）为n，然后是按照逆时针顺序给出的n个顶点的坐标（x1, y1, x2, y2… xn, yn），然后求他的面积。</li>
 </ul>
 <p>这题最简单最快的方法就是叉乘法（原理不懂不要紧，记住公式，反正很容易记）</p>
@@ -539,8 +539,7 @@
 
 
 
-
-
+<p><br><br><br><br></p>
 <h2 id="hdoj2045动态规划"><a href="#hdoj2045动态规划" class="headerlink" title="hdoj2045动态规划"></a>hdoj2045动态规划</h2><p>题目链接：<a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=2045"></a></p>
 <p>【动态规划】:把多阶段过程转化为一系列单阶段问题，利用各阶段之间的关系，<br>逐个求解，创立了解决这类过程优化问题的新方法——动态规划。</p>
 <ul>
@@ -577,6 +576,28 @@
         <span class="token punctuation">&#125;</span>
         <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><br><br><br><br></p>
+<h2 id="进制转换加运算"><a href="#进制转换加运算" class="headerlink" title="进制转换加运算"></a>进制转换加运算</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Scanner</span> in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>in<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token class-name">String</span> num_01 <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">String</span> num_02 <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//1.先将字符串转为十六进制,十六进制转为十进制</span>
+            <span class="token keyword">long</span> result <span class="token operator">=</span> <span class="token class-name">Long</span><span class="token punctuation">.</span><span class="token function">parseLong</span><span class="token punctuation">(</span>num_01<span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token operator">+</span> <span class="token class-name">Long</span><span class="token punctuation">.</span><span class="token function">parseLong</span><span class="token punctuation">(</span>num_02<span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>result<span class="token operator">>=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Long</span><span class="token punctuation">.</span><span class="token function">toHexString</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"-"</span><span class="token operator">+</span><span class="token punctuation">(</span><span class="token class-name">Long</span><span class="token punctuation">.</span><span class="token function">toHexString</span><span class="token punctuation">(</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
             </div>
             <hr/>
 
@@ -1100,7 +1121,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.9k</span>&nbsp;字
+                class="white-color">8.2k</span>&nbsp;字
             
             
             
