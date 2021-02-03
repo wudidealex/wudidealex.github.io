@@ -464,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-02-01
+                    2021-02-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.4k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    5 Min
+                    6 Min
                 </div>
                 
 
@@ -613,6 +613,32 @@
 <p><br><br><br><br></p>
 <h2 id="java中，按数组下标来输出内容"><a href="#java中，按数组下标来输出内容" class="headerlink" title="java中，按数组下标来输出内容"></a>java中，按数组下标来输出内容</h2><p><code>System.out.println(line.substring(6,11));</code><br>意思是：输出line字符串中下标6到11的字符</p>
 <p><br><br><br><br></p>
+<h2 id="怎么把一个变量塞到一个字符串当中"><a href="#怎么把一个变量塞到一个字符串当中" class="headerlink" title="怎么把一个变量塞到一个字符串当中"></a>怎么把一个变量塞到一个字符串当中</h2><p>口诀：<strong>加一个引号，双引号中间加两个加号，两个加号之间加变量名</strong></p>
+<p>例如:</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">return</span> <span class="token string">" [ "</span><span class="token operator">+</span>no<span class="token operator">+</span><span class="token string">",单人间，空闲] "</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><br><br><br><br></p>
+<h2 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java">status <span class="token operator">?</span> <span class="token string">"空闲"</span> <span class="token operator">:</span> <span class="token string">"占用"</span><span class="token punctuation">;</span>
+<span class="token comment">/**
+如果status是true，那么输出空闲，否则就输出占用
+*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><br><br><br><br></p>
+<h2 id="println-引用-，会自动调用引用toString-方法"><a href="#println-引用-，会自动调用引用toString-方法" class="headerlink" title="println(引用)，会自动调用引用toString()方法"></a>println(引用)，会自动调用引用toString()方法</h2><p><br><br><br><br></p>
+<h2 id="arrays工具-排序和二分法查找"><a href="#arrays工具-排序和二分法查找" class="headerlink" title="arrays工具(排序和二分法查找)"></a>arrays工具(排序和二分法查找)</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> main <span class="token punctuation">(</span><span class="token class-name">String</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    
+<span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">434</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">232</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span><span class="token number">67</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">&#125;</span>
+<span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//排序</span>
+<span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">binarySearch</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//3是所要查询的数据，arr是查询的对象（数组）</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>index<span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">?</span> <span class="token string">"该元素不存在"</span> <span class="token operator">:</span> <span class="token string">"该元素下标是："</span> <span class="token operator">+</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
 
             </div>
             <hr/>
@@ -1129,7 +1155,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.6k</span>&nbsp;字
+                class="white-color">9.1k</span>&nbsp;字
             
             
             

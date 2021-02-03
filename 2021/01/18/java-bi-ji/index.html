@@ -464,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-02-02
+                    2021-02-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    5.1k
+                    5.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    18 Min
+                    19 Min
                 </div>
                 
 
@@ -569,11 +569,16 @@
 </li>
 </ul>
 <ul>
-<li><p>idea当中复制一行是ctrl+d</p>
-</li>
-<li><p>idea工具中纠正错误的快捷键：alt+回车</p>
-</li>
-<li><p>快速查看源代码：ctrl按住。点击单词</p>
+<li>idea当中复制一行是ctrl+d</li>
+</ul>
+<ul>
+<li>idea工具中纠正错误的快捷键：alt+回车</li>
+</ul>
+<ul>
+<li>快速查看源代码：ctrl按住。点击单词</li>
+</ul>
+<ul>
+<li><p>查看一个类的属性和方法：ctrl + F12  </p>
 <br>
 
 <br>
@@ -1178,6 +1183,39 @@ compute是一个接口，不能直接new对象，这里使用了匿名内部类�
 <li><p>对数组中存储应用数据类型的情况，要会画它的内存结构图</p>
 </li>
 </ol>
+<p><br><br><br><br></p>
+<h2 id="Java-JDK中内置的一个类：java-lang-String"><a href="#Java-JDK中内置的一个类：java-lang-String" class="headerlink" title="Java JDK中内置的一个类：java.lang.String"></a>Java JDK中内置的一个类：java.lang.String</h2><ol>
+<li><p>String 表示字符串类型，属于引用数据类型，不属于基本数据类型。</p>
+</li>
+<li><p>在java中随便使用双引号括起来的对象。例如：”abc”,”hello world”，这是三个String对象</p>
+</li>
+<li><p>java中规定，双引号括起来的字符串是不可变的·，也就是说”abc”从出生到死亡，都不可变。</p>
+</li>
+<li><p>在JDK当中双引号括起来的字符串。例如：”abc” “def”都是直接存储在”方法区’’的”字符串常量池”当中的。</p>
+<p>为什么SUN公司把自付出存储在一个“字符串常量池”当中呢，因为字符串在实际开发中使用太频繁，为了执行效率，所以把字符串放到了方法区的字符串常量池当中。</p>
+</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> s1 <span class="token operator">=</span><span class="token string">"abcdef"</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> s2 <span class="token operator">=</span><span class="token string">"abcdef"</span><span class="token operator">+</span><span class="token string">"xy"</span><span class="token punctuation">;</span>
+<span class="token comment">/**
+↑这两行代码在表示底层创建了3个字符串对象，都在字符串常量池当中
+↓
+*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             </div>
             <hr/>
@@ -1708,7 +1746,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.6k</span>&nbsp;字
+                class="white-color">9.1k</span>&nbsp;字
             
             
             
