@@ -471,14 +471,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    5.4k
+                    6.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    19 Min
+                    23 Min
                 </div>
                 
 
@@ -1191,7 +1191,7 @@ compute是一个接口，不能直接new对象，这里使用了匿名内部类�
 </li>
 <li><p>java中规定，双引号括起来的字符串是不可变的·，也就是说”abc”从出生到死亡，都不可变。</p>
 </li>
-<li><p>在JDK当中双引号括起来的字符串。例如：”abc” “def”都是直接存储在”方法区’’的”字符串常量池”当中的。</p>
+<li><p>在JDK当中双引号括起来的字符串。例如：**”abc” “def”都是直接存储在”方法区’’的”字符串常量池”当中的。**</p>
 <p>为什么SUN公司把自付出存储在一个“字符串常量池”当中呢，因为字符串在实际开发中使用太频繁，为了执行效率，所以把字符串放到了方法区的字符串常量池当中。</p>
 </li>
 </ol>
@@ -1199,23 +1199,108 @@ compute是一个接口，不能直接new对象，这里使用了匿名内部类�
 <span class="token class-name">String</span> s2 <span class="token operator">=</span><span class="token string">"abcdef"</span><span class="token operator">+</span><span class="token string">"xy"</span><span class="token punctuation">;</span>
 <span class="token comment">/**
 ↑这两行代码在表示底层创建了3个字符串对象，都在字符串常量池当中
-↓
-*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+↓这是使用new方法创建的字符串对象。这个代码中的“xy”是从哪里来的？
+凡是双引号括起来的都在字符串常量池当中有一份
+new对象的时候一定是在堆内存当中开辟空间
+*/</span>
+<span class="token class-name">String</span> s3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"xy"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//i变量中保持的是100这个值</span>
+<span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token comment">//s变量中保存的是字符串对象的内存地址</span>
+<span class="token comment">//s引用中保存的不是"abd"，是0x1111</span>
+<span class="token comment">//而0x1111是“abd”字符串对象在“字符串常量池”当中的内存地址。		</span>
+<span class="token class-name">String</span> s <span class="token operator">=</span><span class="token string">"abc"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
+<h3 id="关于String类中的构造方法"><a href="#关于String类中的构造方法" class="headerlink" title="关于String类中的构造方法"></a>关于String类中的构造方法</h3><ol>
+<li>String s = new String(“”);</li>
+<li>String s = “”;//最常用</li>
+<li>String s = new String (char数组);</li>
+<li>String s = new String (char数组，起始下标，长度);</li>
+<li>String s = new String (byte数组)；</li>
+<li>String s = new String (byte数组，起始下标，长度)；</li>
+</ol>
+<h1 id="String-类当中常用方法"><a href="#String-类当中常用方法" class="headerlink" title="String 类当中常用方法"></a>String 类当中常用方法</h1><ol>
+<li><p>（掌握） <strong>.char charAt(int index)</strong></p>
+<p><code>char c = &quot;中国人&quot;.charAt(1);</code></p>
+<p><code>System.out.printlb(c);//国</code></p>
+</li>
+<li><p>（了解） <strong>.int compareTo(String anotherString)</strong></p>
+<p>int result = “abc”.compareTo(“abc”);</p>
+<p>System.out.println(result);//0</p>
+<p>//输出0（等于0）–&gt;前后一致</p>
+<p>//输出1（大于0）–&gt;前大后小</p>
+<p>//输出-1（小于0）–&gt;前小后大</p>
+<p><em>按字典顺序</em></p>
+<br>
 
-
-
-
-
-
-
-
-
-
-
-
+<p>拿着字符串第一个字母和后面字符串的第一个字母比较。能分胜负就不再比较了。</p>
+<p>System.out.println(“xyz”.compareTo(“yxz”));//-1</p>
+</li>
+<li><p>（掌握） <strong>.boolean contains(CharSequence s)</strong></p>
+<p><u>判断前面的字符串中是否包含后面的字符串。</u></p>
+<p>System.out.println(“hello.java”.contains(“.java”));//ture。如果没有，则输出false</p>
+</li>
+<li><p>（掌握） <strong>.boolean endsWith(String suffix)</strong></p>
+<p><u>判断当前字符串是否以某个字符串结尾</u></p>
+<p>System.out.println(“test.txt”.endsWith(“java”));//false</p>
+</li>
+<li><p>（掌握） <strong>.boolean equals(Object anObject)</strong></p>
+<p><u>比较两个字符串鼻血使用equals方法，不能使用“==”</u></p>
+<p>System.out.println(“abc”.equals(“abc”));//true;</p>
+</li>
+<li><p>（掌握） <strong>.boolean equalsIgnoreCase(String anotherString)</strong></p>
+<p><u>判断两个字符串是否相等，并且同时忽略大小写。</u></p>
+</li>
+<li><p>（掌握） <strong>.byte[] getBytes()</strong></p>
+<p><u>将字符串对象转换成字节数组</u></p>
+<p>byte[] bytes = “abcd”.getBytes();</p>
+<p>//遍历以后输出的是 97 98 99 100</p>
+</li>
+<li><p>（掌握） .<strong>int indexOf(String str)</strong></p>
+<p><u>判断某个字符串在当前字符串中<strong>第一次</strong>出现处的索引（下标）</u></p>
+<p>System,out.println(“12345java2222”.indexOf(“java”));//6</p>
+</li>
+<li><p>（掌握） .<strong>lastInt indexOf(String str)</strong></p>
+<p><u>判断某个字符串在当前字符串中<strong>最后一次</strong>出现处的索引（下标）</u></p>
+<p>System,out.println(“12345java2222”.lastIndexOf(“2”));//12</p>
+</li>
+<li><p>（掌握） <strong>.boolean isEmpty()</strong></p>
+<p><u>判断某个字符串是否为”空字符串”</u></p>
+<p>String s = “”；//不能是null，不然会空指针异常,同时必须为空，就算是空格，返回的也是false；</p>
+<p>System.out.println(s.isEmpty());</p>
+</li>
+<li><p>（掌握） <strong>.int length()</strong></p>
+<p><u>面试题：判断数组长度和判断字符串长度不一样</u></p>
+<p><u>判断数组长度是length属性，判断字符串长度是length()方法</u></p>
+<p>System.out.println(“abc”.length());//3</p>
+</li>
+<li><p>（掌握） <strong>.String replace(CharSequence target, CharSequence replacement)</strong></p>
+<p><u>String的父接口就是：CharSequence</u></p>
+<p>String s =”abc”;<br>String s1=s.replace(“a”,”b”);<br>System.out.println(s1);</p>
+</li>
+<li><p>（掌握） <strong>.String [] split(String regex)</strong></p>
+<p><u>拆分字符串</u></p>
+<p>String[] ymd = “2002-6-1”.split(“-“);<br>for (int i = 0; i &lt; ymd.length ; i++) {</p>
+<pre><code>System.out.println(ymd[i]);</code></pre>
+<p>//可以继续向下拆分，比如通过”0”拆分</p>
+<p>}//输出2002  6  1</p>
+</li>
+<li><p>（掌握） <strong>.boolean startWith(String prefix)</strong></p>
+<p><u>判断某个字符串是否以某个子字符串开始</u></p>
+<p>System.out.println(“<a target="_blank" rel="noopener" href="http://www.baidu.com&quot;.startwith(&quot;http&quot;));//true">http://www.baidu.com&quot;.startWith(&quot;http&quot;));//true</a></p>
+<p>System.out.println(“<a target="_blank" rel="noopener" href="http://www.baidu.com&quot;.startwith(&quot;https&quot;));//false">http://www.baidu.com&quot;.startWith(&quot;https&quot;));//false</a></p>
+</li>
+<li><p>1</p>
+</li>
+<li><p>1</p>
+</li>
+<li><p>1</p>
+</li>
+</ol>
 
             </div>
             <hr/>
@@ -1746,7 +1831,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9.1k</span>&nbsp;字
+                class="white-color">9.9k</span>&nbsp;字
             
             
             
