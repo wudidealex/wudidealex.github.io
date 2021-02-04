@@ -464,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-02-03
+                    2021-02-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    6.2k
+                    6.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    23 Min
+                    25 Min
                 </div>
                 
 
@@ -1213,8 +1213,7 @@ new对象的时候一定是在堆内存当中开辟空间
 <span class="token class-name">String</span> s <span class="token operator">=</span><span class="token string">"abc"</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
+<p><br><br></p>
 <h3 id="关于String类中的构造方法"><a href="#关于String类中的构造方法" class="headerlink" title="关于String类中的构造方法"></a>关于String类中的构造方法</h3><ol>
 <li>String s = new String(“”);</li>
 <li>String s = “”;//最常用</li>
@@ -1223,84 +1222,181 @@ new对象的时候一定是在堆内存当中开辟空间
 <li>String s = new String (byte数组)；</li>
 <li>String s = new String (byte数组，起始下标，长度)；</li>
 </ol>
+<p><br><br><br><br></p>
 <h1 id="String-类当中常用方法"><a href="#String-类当中常用方法" class="headerlink" title="String 类当中常用方法"></a>String 类当中常用方法</h1><ol>
-<li><p>（掌握） <strong>.char charAt(int index)</strong></p>
+<li><p>（掌握） <strong>char charAt(int index)</strong></p>
 <p><code>char c = &quot;中国人&quot;.charAt(1);</code></p>
 <p><code>System.out.printlb(c);//国</code></p>
+<br>
 </li>
-<li><p>（了解） <strong>.int compareTo(String anotherString)</strong></p>
+<li><p>（了解） <strong>int compareTo(String anotherString)</strong></p>
 <p>int result = “abc”.compareTo(“abc”);</p>
 <p>System.out.println(result);//0</p>
 <p>//输出0（等于0）–&gt;前后一致</p>
 <p>//输出1（大于0）–&gt;前大后小</p>
 <p>//输出-1（小于0）–&gt;前小后大</p>
 <p><em>按字典顺序</em></p>
-<br>
-
 <p>拿着字符串第一个字母和后面字符串的第一个字母比较。能分胜负就不再比较了。</p>
 <p>System.out.println(“xyz”.compareTo(“yxz”));//-1</p>
+<br>
 </li>
-<li><p>（掌握） <strong>.boolean contains(CharSequence s)</strong></p>
+<li><p>（掌握） <strong>boolean contains(CharSequence s)</strong></p>
 <p><u>判断前面的字符串中是否包含后面的字符串。</u></p>
 <p>System.out.println(“hello.java”.contains(“.java”));//ture。如果没有，则输出false</p>
+<br>
 </li>
-<li><p>（掌握） <strong>.boolean endsWith(String suffix)</strong></p>
+<li><p>（掌握） <strong>boolean endsWith(String suffix)</strong></p>
 <p><u>判断当前字符串是否以某个字符串结尾</u></p>
 <p>System.out.println(“test.txt”.endsWith(“java”));//false</p>
+<br>
 </li>
-<li><p>（掌握） <strong>.boolean equals(Object anObject)</strong></p>
+<li><p>（掌握） <strong>boolean equals(Object anObject)</strong></p>
 <p><u>比较两个字符串鼻血使用equals方法，不能使用“==”</u></p>
 <p>System.out.println(“abc”.equals(“abc”));//true;</p>
+<br>
 </li>
-<li><p>（掌握） <strong>.boolean equalsIgnoreCase(String anotherString)</strong></p>
+<li><p>（掌握） <strong>boolean equalsIgnoreCase(String anotherString)</strong></p>
 <p><u>判断两个字符串是否相等，并且同时忽略大小写。</u></p>
+<br>
 </li>
-<li><p>（掌握） <strong>.byte[] getBytes()</strong></p>
+<li><p>（掌握） <strong>byte[] getBytes()</strong></p>
 <p><u>将字符串对象转换成字节数组</u></p>
 <p>byte[] bytes = “abcd”.getBytes();</p>
 <p>//遍历以后输出的是 97 98 99 100</p>
+<br>
 </li>
-<li><p>（掌握） .<strong>int indexOf(String str)</strong></p>
+<li><p>（掌握） int indexOf(String str)**</p>
 <p><u>判断某个字符串在当前字符串中<strong>第一次</strong>出现处的索引（下标）</u></p>
 <p>System,out.println(“12345java2222”.indexOf(“java”));//6</p>
+<br>
 </li>
-<li><p>（掌握） .<strong>lastInt indexOf(String str)</strong></p>
+<li><p>（掌握） lastInt indexOf(String str)**</p>
 <p><u>判断某个字符串在当前字符串中<strong>最后一次</strong>出现处的索引（下标）</u></p>
 <p>System,out.println(“12345java2222”.lastIndexOf(“2”));//12</p>
+<br>
 </li>
-<li><p>（掌握） <strong>.boolean isEmpty()</strong></p>
+<li><p>（掌握） <strong>boolean isEmpty()</strong></p>
 <p><u>判断某个字符串是否为”空字符串”</u></p>
 <p>String s = “”；//不能是null，不然会空指针异常,同时必须为空，就算是空格，返回的也是false；</p>
 <p>System.out.println(s.isEmpty());</p>
+<br>
 </li>
-<li><p>（掌握） <strong>.int length()</strong></p>
+<li><p>（掌握） <strong>int length()</strong></p>
 <p><u>面试题：判断数组长度和判断字符串长度不一样</u></p>
 <p><u>判断数组长度是length属性，判断字符串长度是length()方法</u></p>
 <p>System.out.println(“abc”.length());//3</p>
+<br>
 </li>
-<li><p>（掌握） <strong>.String replace(CharSequence target, CharSequence replacement)</strong></p>
+<li><p>（掌握） <strong>String replace(CharSequence target, CharSequence replacement)</strong></p>
 <p><u>String的父接口就是：CharSequence</u></p>
 <p>String s =”abc”;<br>String s1=s.replace(“a”,”b”);<br>System.out.println(s1);</p>
+<br>
 </li>
-<li><p>（掌握） <strong>.String [] split(String regex)</strong></p>
+<li><p>（掌握） <strong>String [] split(String regex)</strong></p>
 <p><u>拆分字符串</u></p>
-<p>String[] ymd = “2002-6-1”.split(“-“);<br>for (int i = 0; i &lt; ymd.length ; i++) {</p>
-<pre><code>System.out.println(ymd[i]);</code></pre>
+<p>String[] ymd = “2002-6-1”.split(“-“);<br>for (int i = 0; i &lt; ymd.length ; i++) {<br>System.out.println(ymd[i]);</p>
 <p>//可以继续向下拆分，比如通过”0”拆分</p>
 <p>}//输出2002  6  1</p>
+<br>
 </li>
-<li><p>（掌握） <strong>.boolean startWith(String prefix)</strong></p>
+<li><p>（掌握） <strong>boolean startWith(String prefix)</strong></p>
 <p><u>判断某个字符串是否以某个子字符串开始</u></p>
-<p>System.out.println(“<a target="_blank" rel="noopener" href="http://www.baidu.com&quot;.startwith(&quot;http&quot;));//true">http://www.baidu.com&quot;.startWith(&quot;http&quot;));//true</a></p>
-<p>System.out.println(“<a target="_blank" rel="noopener" href="http://www.baidu.com&quot;.startwith(&quot;https&quot;));//false">http://www.baidu.com&quot;.startWith(&quot;https&quot;));//false</a></p>
+<p>System.out.println(“111222333”.startWith(“111”));//true</p>
+<p>System.out.println(“111222333”.startWith(“123”));//false</p>
+<br>
 </li>
-<li><p>1</p>
+<li><p>（掌握） <strong>String substring(int beginIndex)</strong></p>
+<p><u>截取字符串</u></p>
+<p>System.out.println(“111222333”.substring(6));333</p>
+<br>
 </li>
-<li><p>1</p>
+<li><p>（掌握） <strong>String substring(int beginIndex,int endIndex)</strong></p>
+<p><u>beginIndex包括，endIndex不包括</u></p>
+<p>System.out.println(“111222333444”.substring(7,10));334【左闭右开】</p>
+<br>
 </li>
-<li><p>1</p>
+<li><p>（掌握） <strong>char[] toCharArray();</strong></p>
+<p><u>将字符串转换成char数组</u></p>
+<p>char[] chars = “我是中国人”.toCharArray();</p>
+<p>//遍历得出结果：我 是 中 国 人</p>
+<br>
+</li>
+<li><p>（掌握） <strong>String toLowerCase()</strong></p>
+<p><u>转换成小写</u></p>
+<p>System.out.println(“ABCDef”.toLowerCase());</p>
+<br>
+</li>
+<li><p>（掌握） <strong>String toUpperCase()</strong></p>
+<p><u>转换成大写</u></p>
+<p>System.out.println(“ABCDef”.toLowerCase());</p>
+<br>
+</li>
+<li><p>（掌握） <strong>String trim();</strong></p>
+<p><u>去除字符串前后空白</u></p>
+<p>System.out.println(“   sda sdas  “.trim());//sda sdas</p>
+<br>
+</li>
+<li><p>(掌握) .String中有一个方法是静态的不需要new对象</p>
+<p>这个方法叫做valueOf，作用是“非字符串“转换成”字符串”</p>
+<p>String s1 = String.valueOf(true);</p>
+<p>String s1 = String.valueOf(123);</p>
+<p>System.out.println(s1);</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//这个静态的valueOf()方法，参数是一个对象的时候，会自动调用这个对象的toString()方法</span>
+<span class="token class-name">String</span> s1 <span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Customer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//没有重写toString()方法之前是对象内存地址 </span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//我是一个vip客户！</span>
+<span class="token keyword">class</span> <span class="token class-name">Customer</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">//重写toString()方法</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token string">"我是一个vip客户！"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>本质上System.out.println()这个方法在输出任何数据的时候都是先转换成字符串，再输出 </p>
+<p><br><br><br><br></p>
 </li>
 </ol>
+<h2 id="StringBuffer"><a href="#StringBuffer" class="headerlink" title="StringBuffer"></a>StringBuffer</h2><ul>
+<li><p>如果以后需要进行大量的字符串拼接操作，建议使用JDK自带的：<br>java.lang.StringBuffer;<br>java.lang.StringBuilder;</p>
+</li>
+<li><p>如何优化StringBuffer的性能？</p>
+<p>在创建StringBuffer的时候尽可能给定一个初始化容量。</p>
+<p>最好减少底层的扩容次数。预估计一下，给一个大一些的初始化容量。</p>
+</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//创建一个初始化容量为16个byte[]数组（字符串缓冲区对象）</span>
+    <span class="token class-name">StringBuffer</span> stringBuffer<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//拼接字符串，以后拼接字符串同意调用append()方法</span>
+    <span class="token comment">//append是追加的意思</span>
+    stringBuffer<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"abd"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    stringBuffer<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token number">3.14</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    stringBuffer<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    stringBuffer<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token number">100l</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//append方法底层在进行追加的时候，如果byte数组慢了，会自动扩容</span>
+    stringBuffer<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token number">100l</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stringBuffer<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//abd3.14true100100</span>
+
+    <span class="token comment">//指定初始化容量的StringBuffer对象（字符串缓冲区对象）</span>
+    <span class="token class-name">StringBuffer</span> sb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             </div>
             <hr/>
@@ -1831,7 +1927,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9.9k</span>&nbsp;字
+                class="white-color">10.4k</span>&nbsp;字
             
             
             
