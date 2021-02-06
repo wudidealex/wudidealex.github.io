@@ -464,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-02-05
+                    2021-02-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    9.5k
+                    9.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    36 Min
+                    37 Min
                 </div>
                 
 
@@ -1019,7 +1019,7 @@
 <p><code>protected void finaliz() throw Throwable&#123; &#125;</code></p>
 <p>GC：负责带一把过finalize()方法</p>
 </li>
-<li><p>finalize()方法只有一个方塔提，里面没有代码，而且这个方法是protected修饰的。</p>
+<li><p>finalize()方法只有一个方法体，里面没有代码，而且这个方法是protected修饰的。</p>
 </li>
 <li><p>这个方法不需要程序员手动调用，JVM的垃圾回收器会负责调调用这个方法。</p>
 <p>不像equals toString ,equals和toString（）方法是需要你写代码调用的。</p>
@@ -1040,7 +1040,7 @@
 <p>这个时机是垃圾回收时机。</p>
 </li>
 <li><p>有段代码可以建议垃圾回收期启动</p>
-<p><code>System.gc();   // 建议激动垃圾回收器</code></p>
+<p><code>System.gc();   // 建议启动垃圾回收器</code></p>
 </li>
 </ol>
 <p><br><br></p>
@@ -1749,7 +1749,7 @@ new对象的时候一定是在堆内存当中开辟空间
 </li>
 </ul>
 <ol start="2">
-<li><strong>运行时异常一般发生的概率比较低//  又叫非受检异常或非受控异常</strong></li>
+<li><strong>运行时异常一般发生的概率比较低//  又叫未受检异常或非受控异常</strong></li>
 </ol>
 <ul>
 <li><p>例：小明走在大街上，可能会被天上的飞机轮子砸到。</p>
@@ -1761,7 +1761,7 @@ new对象的时候一定是在堆内存当中开辟空间
 </li>
 </ul>
 <ol start="3">
-<li>假设java中没有对异常进行划分，没有分为：编译时异常和运行时异常，所有异常需要再编写程序阶段对其进行预处理，僵尸怎么样的效果呢？</li>
+<li>假设java中没有对异常进行划分，没有分为：编译时异常和运行时异常，所有异常需要再编写程序阶段对其进行预处理，是怎么样的效果呢？</li>
 </ol>
 <ul>
 <li><p>首先，如果这样的话，程序肯定绝对安全的</p>
@@ -1773,27 +1773,82 @@ new对象的时候一定是在堆内存当中开辟空间
 </ul>
 </li>
 </ol>
-<h3 id="java语言中对异常的处理包括两种方式："><a href="#java语言中对异常的处理包括两种方式：" class="headerlink" title="java语言中对异常的处理包括两种方式："></a>java语言中对异常的处理包括两种方式：</h3></li>
+</li>
+</ol>
+<h3 id="java语言中对异常的处理包括两种方式："><a href="#java语言中对异常的处理包括两种方式：" class="headerlink" title="java语言中对异常的处理包括两种方式："></a>java语言中对异常的处理包括两种方式：</h3><ol>
 <li><p>在方法声明的位置上使用throws关键字，抛给上一级</p>
 <p>谁调用我，我就抛给谁。抛给上一级</p>
 </li>
 <li><p>使用try…catch语句进行异常的捕捉</p>
 <p>这件事发生了，谁也不知道，因为我给抓住了</p>
+<p>举个例子：</p>
 </li>
 </ol>
-<p>举个例子：</p>
 <ul>
 <li>我是某集团的一个销售员，因为我的失误，导致公司损失了1000元</li>
 <li>“损失”1000元，可以看做一个异常发生了。我有两种处理方式</li>
 <li>第一种方式：我把这件事告诉领导【异常上抛】</li>
 <li>第二种方式：我自己掏腰包把这钱补上【异常捕捉】</li>
 </ul>
-<p><strong>java中异常发生后如果一直上抛，最后抛给了main方法，main方法继续上抛，抛给了调用者JVM，JVM知道这个异常发生，只有一个结果。终止java程序的执行。</strong></p>
-<p>注意：只要异常没有捕捉，采用上报的方式，此方法的后续代码不会执行。</p>
-<p>另外需要注意，try语句块的某一行出现异常，该行后面的代码不会执行。</p>
-<p>try..catch捕捉后，后续代码可以执行。</p>
-<p>​      </p>
-<p>​      </p>
+<p>   <strong>java中异常发生后如果一直上抛，最后抛给了main方法，main方法继续上抛，抛给了调       用者JVM，JVM知道这个异常发生，只有一个结果。终止java程序的执行。</strong></p>
+<p>   注意：只要异常没有捕捉，采用上报的方式，此方法的后续代码不会执行。</p>
+<p>   另外需要注意，try语句块的某一行出现异常，该行后面的代码不会执行。</p>
+<p>   try..catch捕捉后，后续代码可以执行。</p>
+<p>   <br><br></p>
+<h3 id="深入try-catch"><a href="#深入try-catch" class="headerlink" title="深入try..catch"></a>深入try..catch</h3><ol>
+<li><p>catch后面的小括号中的类型可以是具体的异常类型，也可以是该异常类型的父类型。</p>
+</li>
+<li><p>catch可以写多个。建议catch的时候，精确的一个一个处理，这样有利于程序的调试。</p>
+</li>
+<li><p>catch写多个的时候，从上到下，必须遵守从小到大</p>
+<p><br><br></p>
+<h3 id="上报和捕捉的选择："><a href="#上报和捕捉的选择：" class="headerlink" title="上报和捕捉的选择："></a>上报和捕捉的选择：</h3><p>如果希望调用者来处理，选择throws上报</p>
+<p><br><br></p>
+<p>异常对象有两个非常重要的方法：、</p>
+</li>
+<li><p>获取异常简单的描述信息：</p>
+<p>String msg = exception.getMessage();</p>
+</li>
+<li><p>打印异常追踪的栈堆信息：</p>
+<p>exception.printStackTrace();【exception是对象】</p>
+<p> <br><br></p>
+</li>
+</ol>
+<h3 id="关于try-catch中的fianlly子句"><a href="#关于try-catch中的fianlly子句" class="headerlink" title="关于try..catch中的fianlly子句"></a>关于try..catch中的fianlly子句</h3><ol>
+<li><p>在finally子句中的代码是最后执行的，并且是一定会执行，即使try语句块中的代码出现了异常。</p>
+<p>finally子句必须和ty一起出现，不能单独编写。</p>
+</li>
+<li><p>finally语句通常使用在哪些情况下呢？</p>
+<p><br><br></p>
+</li>
+</ol>
+<h3 id="java中任何自定义异常"><a href="#java中任何自定义异常" class="headerlink" title="java中任何自定义异常"></a>java中任何自定义异常</h3><p>两步：</p>
+<ol>
+<li>编写一个类继承Excep或者RuntimeException</li>
+<li>提供两个构造方法，一个无参数的，一个带有String</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyException</span> <span class="token keyword">extends</span> <span class="token class-name">Exception</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">MyException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token class-name">MyException</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">MyException</span> e <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyException</span><span class="token punctuation">(</span><span class="token string">"用户民不能为空！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//打印异常堆栈信息</span>
+    
+    <span class="token comment">//获取异常简单描述信息</span>
+    <span class="token class-name">String</span> msg <span class="token operator">=</span> e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
 <p>​      </p>
 <p>​      </p>
 <p>​      </p>
@@ -2327,7 +2382,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.1k</span>&nbsp;字
+                class="white-color">13.5k</span>&nbsp;字
             
             
             
