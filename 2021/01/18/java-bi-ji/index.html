@@ -464,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-02-14
+                    2021-02-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    11k
+                    12.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    42 Min
+                    47 Min
                 </div>
                 
 
@@ -1179,9 +1179,23 @@ compute是一个接口，不能直接new对象，这里使用了匿名内部类�
 <li><p>数组的拷贝：System.arraycopy()方法的使用</p>
 <p>数组长度一旦确定，不可变。</p>
 <p>所以数组长度不够的时候需要扩容，扩容的机制是：新建一个大数组，讲小数组的数据拷贝到大数组，小数组被垃圾回收器回收</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Selftest</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> targetArr<span class="token operator">=</span><span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">arraycopy</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>targetArr<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>targetArr<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span>targetArr<span class="token punctuation">.</span>length <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>targetArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 </li>
-<li><p>对数组中存储应用数据类型的情况，要会画它的内存结构图</p>
-</li>
+</ol>
+<ol start="8">
+<li>对数组中存储应用数据类型的情况，要会画它的内存结构图</li>
 </ol>
 <p><br><br><br><br></p>
 <h2 id="Java-JDK中内置的一个类：java-lang-String"><a href="#Java-JDK中内置的一个类：java-lang-String" class="headerlink" title="Java JDK中内置的一个类：java.lang.String"></a>Java JDK中内置的一个类：java.lang.String</h2><ol>
@@ -1900,7 +1914,7 @@ new对象的时候一定是在堆内存当中开辟空间
 </ul>
 </li>
 </ol>
-<p>​      </p>
+<p>​       <br><br> <br><br></p>
 <h2 id="关于java-util-Collection接口中常用的方法"><a href="#关于java-util-Collection接口中常用的方法" class="headerlink" title="关于java.util.Collection接口中常用的方法"></a>关于java.util.Collection接口中常用的方法</h2><ol>
 <li><p>Collection中能存放什么元素？</p>
 <p>没有使用泛型之前，Collection中可以存储Object的所有子类型。</p>
@@ -1917,39 +1931,208 @@ new对象的时候一定是在堆内存当中开辟空间
 <p>Object[] toArray() 调用这个方法可以把集合转换成数组。</p>
 </li>
 <li><p>迭代集合</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Collection</span> c  <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"def"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//进行迭代</span>
-<span class="token comment">//第一步，获取集合对象的迭代器对象Iterator</span>
-<span class="token class-name">Iterator</span> it <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//第二步，通过以上获取的的迭代器对象开始迭代集合</span>
-<span class="token comment">/*
-一以下两个方法是迭代器对象Iterator中的方法
-boolean hasNext()如果仍有元素可以迭代，则返回true。
-Objext next()返回迭代的下一个集合。
-*/</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span>it<span class="token punctuation">,</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token class-name">Object</span> obj <span class="token operator">=</span> it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//存进去是什么类型，取出来就是什么类型，只不过输出的时候回转换成字符串。因为println会调用toString()方法。</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">   <span class="token class-name">Collection</span> c  <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"def"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token comment">//进行迭代</span>
+   <span class="token comment">//第一步，获取集合对象的迭代器对象Iterator</span>
+   <span class="token class-name">Iterator</span> it <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token comment">//第二步，通过以上获取的的迭代器对象开始迭代集合</span>
+   <span class="token comment">/*
+   一以下两个方法是迭代器对象Iterator中的方法
+   boolean hasNext()如果仍有元素可以迭代，则返回true。
+   Objext next()返回迭代的下一个集合。
+   */</span>
+   <span class="token keyword">while</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+       <span class="token class-name">Object</span> obj <span class="token operator">=</span> it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       
+   <span class="token comment">/*存进去是什么类型，取出来就是什么类型，
+   只不过输出的时候回转换成字符串。因为println会调用toString()方法。
+      */</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>总结重点：</p>
-<ol>
-<li>把集合继承结构图背会。</li>
+</li>
+<li><p>把集合继承结构图背会。</p>
+<ol start="2">
 <li>把Collection接口中常用方法测试几遍</li>
-<li>把迭代器弄明白</li>
+</ol>
+</li>
+<li><p>把迭代器弄明白</p>
+<ol start="4">
 <li>Collection接口中的remove方法和contain方法底层都会调用（重写）equals。</li>
 </ol>
 </li>
 </ol>
+<pre><code>&lt;br&gt;&lt;br&gt;</code></pre>
 <h3 id="关于集合元素的remove"><a href="#关于集合元素的remove" class="headerlink" title="关于集合元素的remove"></a>关于集合元素的remove</h3><ul>
-<li>重点：当集合的结构发生改变是，迭代器萹蓄重新获取，如果还是用以前老的迭代器，会出现异常：java.util.ConcurrentModificationException</li>
+<li><p>重点：当集合的结构发生改变是，迭代器萹蓄重新获取，如果还是用以前老的迭代器，会出现异常：java.util.ConcurrentModificationException</p>
+</li>
+<li><p>重点：在迭代集合元素的过程中，不能调用集合对象的remove方法，删除元素：</p>
+<p>c.remove(0); 迭代过程中不能这样</p>
+<p>否则会出现 java.util.ConcurrentModificationException</p>
+</li>
+<li><p>重点：在迭代元素的过程中，一定要使用迭代器的Itertator的remove方法，删除元素，不要使用集合自带的remove方法。</p>
+</li>
 </ul>
-<p>​      </p>
-<p>​      </p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">while</span><span class="token punctuation">(</span>it2<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">Object</span> o <span class="token operator">=</span> it2<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">/*
+    chu出异常的根本原因：集合中元素删除了，但没有更新迭代器（迭代器不知道集合变化了）
+    c2.remove(o)； 直接通过集合去删除元素，没有通知迭代器。（导致迭代器的快照和原集合状态不同
+    */</span>
+    <span class="token comment">//使用迭代器去删除时，会自动更新迭代器，并且更新集合（删除集合中的元素）</span>
+   it2<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//删除的一定是迭代器指向的当前元素</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p> <br><br> <br><br></p>
+<h2 id="关于java-util-list接口中常用的方法"><a href="#关于java-util-list接口中常用的方法" class="headerlink" title="关于java.util.list接口中常用的方法"></a>关于java.util.list接口中常用的方法</h2><ol>
+<li><p>​      List集合存储元素的特点：有序可重复</p>
+<p>有序：List集合中的元素有下标。</p>
+<p>从0开始，以1递增</p>
+<p>可重复：存储一个1，还可以在存储1</p>
+</li>
+<li><p>List接口既然是Collection接口的子接口，那么肯定List接口有自己的”特色”的方法(以下只列出list特有的，常用的方法)</p>
+<ul>
+<li>void add(int index，E element) 在列表的指定位置插入指定元素（第一个参数是下标）（后面的元素依次顺移一位）</li>
+<li>Object get(int index) 按下标获取元素</li>
+<li>int indexOf(Object o) 返回指定对象第一次出现处的索引</li>
+<li>int lastIndexOf(Object o) 返回指定对象最后一次出现处的索引</li>
+<li>Object remove(int index) 删除指定下标位置的元素</li>
+<li>Object set(int index, E element) 修改指定位置的元素</li>
+</ul>
+</li>
+</ol>
+<p> <br><br> <br><br></p>
+<h2 id="ArrayList集合："><a href="#ArrayList集合：" class="headerlink" title="ArrayList集合："></a>ArrayList集合：</h2><ol>
+<li><p>默认初始化容量为10（底层先创建了一个长度为0的数组，当前添加第一个元素的时候初始化容量10）</p>
+</li>
+<li><p>集合底层是一个Object[]数组</p>
+</li>
+<li><p>构造方法：</p>
+<p>new ArrayList();</p>
+<p>new ArrayList(20);</p>
+</li>
+<li><p>ArrayList集合的扩容：</p>
+<p>增长到原容量的1.5倍。</p>
+<p>ArrayList集合底层是数组，怎么优化：尽可能少的扩容。因为数组扩容效率比较低，建议在使用ArrayList集合的时候预估元素的个数，给定一个初始化容量。</p>
+</li>
+<li><p>这么多集合中，用哪个集合最多？</p>
+<p>ArrayList集合</p>
+<p>因为往数组末尾添加元素，效率不受影响。</p>
+<p>另外，我们检索、查找某个元素的操作比较多</p>
+</li>
+<li><p>另一个构造方法</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Collection</span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建HashSet集合</span>
+c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">900</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//通过这个构造方法可以将HashSet结合转换成List集合</span>
+<span class="token class-name">List</span> myList3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i <span class="token operator">&lt;</span> myList3<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>myList<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+</li>
+</ol>
+<p> <br><br> <br><br></p>
+<h2 id="链表："><a href="#链表：" class="headerlink" title="链表："></a>链表：</h2><ul>
+<li><p>优点：</p>
+<p>由于链表上的元素在空间存储上的内存地址不连续。</p>
+<p>所有随记增删元素的时候不会有大量的元素位移，因此随记增删效率较高。</p>
+<p>在以后的开发中，如果遇到随机增删集合中元素的业务比较多时，建议使用LinkedList。</p>
+</li>
+<li><p>缺点：</p>
+<p>不能通过数学表达式计算被查找元素的内存地址，每一次查找都是从头节点开始遍历，直到找到为止。所以LinkedList集合检索、查找的效率较低。</p>
+<br>
+</li>
+<li><p>ArrayList 数组的特点，把检索发挥到机制（但ArrayList是非线程安全的。不是线程安全的集合。）</p>
+</li>
+<li><p>LinkedList 链表特点（双向链表），把随机增删发挥到机制</p>
+<p>LinkedList有初始容量吗？没有</p>
+<p>最初这个链表中没有任何元素。first和last引用都是null</p>
+<p>不管是LinkedList还是ArrayList，以后写代码不需要关心具体是哪个集合。</p>
+<p>因为我们要面向接口编程，调用的方法都是接口中的方法</p>
+<p><br><br> <br><br></p>
+</li>
+</ul>
+<h2 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h2><ol>
+<li><p>底层也是一个数组</p>
+</li>
+<li><p>初始化容量：10</p>
+</li>
+<li><p>怎么扩容的？</p>
+<p>扩容之后是原容量的2倍</p>
+</li>
+<li><p>ArrayList集合扩容特点：</p>
+<p>ArrayList集合扩容是原容量的1.5倍</p>
+</li>
+<li><p>Vector所有方法都是线程同步的，都带有synchronized关键字，是线程安全的。效率比较低，使用较少了。</p>
+</li>
+<li><p>怎么讲一个线程不安全的ArrayList集合转换成线程安全的呢？</p>
+<p>使用集合工具类：</p>
+<p>java.util.Collections;</p>
+<p>java.util.Collection是集合接口；java.util.Collections是集合工具类</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">List</span> myList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//非线程安全的</span>
+<span class="token comment">//变成线程安全的</span>
+<span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">synchronizedList</span><span class="token punctuation">(</span>myList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//myList集合线程就是安全的了</span>
+myList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"111"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"222"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"333"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+</li>
+</ol>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><ol>
+<li><p>JDK5.0之后推出的新特性：泛型</p>
+</li>
+<li><p>泛型这种语法机制，只在程序编译阶段起作用，只是给编译器参考的。（运行阶段泛型没用！）</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//创建Animal Cat Bird类的代码省略</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Animal</span><span class="token punctuation">></span></span> myList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Animal</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+cat c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Bird</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Bird</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+myList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/*
+JDK8之后，ArrayList&lt;这里的类型会自动推断>(),前提是JDK8之后才允许
+自动类型推断，钻石表达式
+List&lt;Animal> myList = new ArrayList&lt;>();
+*/</span>
+<span class="token class-name">Iterator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Animal</span><span class="token punctuation">></span></span> it <span class="token operator">=</span> myList<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">Animal</span> a <span class="token operator">=</span> it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>使用了泛型的好处是什么？</p>
+<ul>
+<li>集合中存储的元素类型同意了。</li>
+<li>从集合中取出的元素类型是泛型指定的类型，不需要进行大量的“向下转型”</li>
+</ul>
+</li>
+<li><p>泛型的缺点是什么？</p>
+<ul>
+<li>导致集合中存储的元素缺乏多样性！</li>
+<li>大多数业务中，集合中元素的类型还是统一的。所以这种·泛型特性被大家所认可</li>
+</ul>
+</li>
+<li><p>自定义泛型可以吗？可以</p>
+<ul>
+<li>自定义泛型的时候，&lt;&gt;尖括号中的是一个标识符，随便下。</li>
+<li>java源代码中经常出现的是：<E>和<T></li>
+</ul>
+</li>
+</ol>
 
             </div>
             <hr/>
@@ -2480,7 +2663,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">14.8k</span>&nbsp;字
+                class="white-color">16.3k</span>&nbsp;字
             
             
             
