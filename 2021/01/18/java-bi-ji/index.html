@@ -464,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-02-20
+                    2021-02-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    12.5k
+                    13.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    47 Min
+                    52 Min
                 </div>
                 
 
@@ -1922,13 +1922,13 @@ new对象的时候一定是在堆内存当中开辟空间
 <p>集合后期我们会学习“泛型”的语法，目前先不用管。Collction中什么都能存，只要是Object的子类型就行。（集合中不能直接存储基本数据类型，也不能存java对象，只是存储java对象的内存地址。）</p>
 </li>
 <li><p>Collection中的常用方法</p>
-<p>boolean add(Object e) 向集合中添加元素</p>
-<p>int size() 获取集合中元素的个数</p>
-<p>void cleaar()清空集合</p>
-<p>boolean contain(Object o) 判断当前集合中是否包含元素o，包含返回true，不包含返回false</p>
-<p>boolean remove(Object 0) 删除集合中的某个元素</p>
-<p>boolean isEmpty() 判断集合中元素的个数是否为0</p>
-<p>Object[] toArray() 调用这个方法可以把集合转换成数组。</p>
+<p><code>boolean add(Object e)</code> 向集合中添加元素</p>
+<p><code>int size()</code> 获取集合中元素的个数</p>
+<p><code>void clear()</code>清空集合</p>
+<p><code>boolean contain(Object o)</code> 判断当前集合中是否包含元素o，包含返回true，不包含返回false</p>
+<p><code>boolean remove(Object 0)</code> 删除集合中的某个元素</p>
+<p><code>boolean isEmpty()</code> 判断集合中元素的个数是否为0</p>
+<p><code>Object[] toArray()</code> 调用这个方法可以把集合转换成数组。</p>
 </li>
 <li><p>迭代集合</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">   <span class="token class-name">Collection</span> c  <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -2000,12 +2000,12 @@ new对象的时候一定是在堆内存当中开辟空间
 </li>
 <li><p>List接口既然是Collection接口的子接口，那么肯定List接口有自己的”特色”的方法(以下只列出list特有的，常用的方法)</p>
 <ul>
-<li>void add(int index，E element) 在列表的指定位置插入指定元素（第一个参数是下标）（后面的元素依次顺移一位）</li>
-<li>Object get(int index) 按下标获取元素</li>
-<li>int indexOf(Object o) 返回指定对象第一次出现处的索引</li>
-<li>int lastIndexOf(Object o) 返回指定对象最后一次出现处的索引</li>
-<li>Object remove(int index) 删除指定下标位置的元素</li>
-<li>Object set(int index, E element) 修改指定位置的元素</li>
+<li><code>void add(int index，E element)</code> 在列表的指定位置插入指定元素（第一个参数是下标）（后面的元素依次顺移一位）</li>
+<li><code>Object get(int index)</code> 按下标获取元素</li>
+<li><code>int indexOf(Object o)</code> 返回指定对象第一次出现处的索引</li>
+<li><code>int lastIndexOf(Object o) </code>返回指定对象最后一次出现处的索引</li>
+<li><code>Object remove(int index)</code> 删除指定下标位置的元素</li>
+<li><code>Object set(int index, E element)</code> 修改指定位置的元素</li>
 </ul>
 </li>
 </ol>
@@ -2016,8 +2016,8 @@ new对象的时候一定是在堆内存当中开辟空间
 <li><p>集合底层是一个Object[]数组</p>
 </li>
 <li><p>构造方法：</p>
-<p>new ArrayList();</p>
-<p>new ArrayList(20);</p>
+<p><code>new ArrayList();</code></p>
+<p><code>new ArrayList(20);</code></p>
 </li>
 <li><p>ArrayList集合的扩容：</p>
 <p>增长到原容量的1.5倍。</p>
@@ -2089,8 +2089,7 @@ myList<span class="token punctuation">.</span><span class="token function">add</
 myList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"222"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 myList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"333"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
+<p> <br><br> <br><br></p>
 </li>
 </ol>
 <h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><ol>
@@ -2128,10 +2127,187 @@ List&lt;Animal> myList = new ArrayList&lt;>();
 </li>
 <li><p>自定义泛型可以吗？可以</p>
 <ul>
-<li>自定义泛型的时候，&lt;&gt;尖括号中的是一个标识符，随便下。</li>
-<li>java源代码中经常出现的是：<E>和<T></li>
+<li><p>自定义泛型的时候，&lt;&gt;尖括号中的是一个标识符，随便下。</p>
+</li>
+<li><p>java源代码中经常出现的是：<code>&lt;E&gt;</code>和<code>&lt;T&gt;</code></p>
+<p>E:Element元素</p>
+<p>T:Type类型</p>
+</li>
+</ul>
+<p><br><br> <br><br></p>
+</li>
+</ol>
+<h2 id="增强for循环：foreach"><a href="#增强for循环：foreach" class="headerlink" title="增强for循环：foreach"></a>增强for循环：foreach</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/*
+for(元素类型 变量名 : 数组或集合)&#123;
+ System.out.println(变量名);
+&#125;
+*/</span>
+<span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> data <span class="token operator">:</span> arr<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">//data就是数组中的元素</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p> <br><br> <br><br></p>
+<h2 id="Set下的子类"><a href="#Set下的子类" class="headerlink" title="Set下的子类"></a>Set下的子类</h2><ul>
+<li><p>HashSet集合：无序不可重复</p>
+</li>
+<li><p>TreeSet集合存储元素的特点：</p>
+<ol>
+<li><p>无序不可重复，但是存储的元素可以自动按照大小顺序排序！ </p>
+<p>称为：可排序集合</p>
+</li>
+<li><p>无序：这里的无序指的是存进去的顺序和取出来的顺序不同。并且没有下标</p>
+</li>
+</ol>
+<p><br><br> <br><br></p>
+</li>
+</ul>
+<h2 id="java-util-Map接口中常用的方法"><a href="#java-util-Map接口中常用的方法" class="headerlink" title="java.util.Map接口中常用的方法"></a>java.util.Map接口中常用的方法</h2><ol>
+<li><p>Map和Collection没有继承关系</p>
+</li>
+<li><p>Map集合以 key 和 value 的方式存储数据：键值对</p>
+<p>key和value都是引用数据类型，都是存储对象的内存地址</p>
+<p>key起到主导地位，value是key的一个附属品</p>
+</li>
+<li><p>Map接口中常用方法</p>
+<ul>
+<li><p><code>V put(K key，V vaLue)</code> 向Map集合中添加键值对</p>
+</li>
+<li><p><code>V get(Object key)</code>  通过key获取vaLue</p>
+</li>
+<li><p><code>void clear()</code> 清空Map集合</p>
+</li>
+<li><p><code>boolean containsKey(Object key)</code> 判断Map中是否包含某个key</p>
+</li>
+<li><p><code>boolean containsVaLue(Object vaLue)</code> 判断Map中是否包含某个value</p>
+</li>
+<li><p><code>boolean isEmpty()</code> 判断Map集合中元素个数是否为0</p>
+</li>
+<li><p><code>Set&lt;K&gt; keySet()</code> 获取Map集合所有的key（所有的键是个set集合）</p>
+</li>
+<li><p><code>V remove(Object key)</code>通过key删除键值对</p>
+</li>
+<li><p><code>int size()</code>获取Map集合中键值对的个数</p>
+</li>
+<li><p><code>ColLection&lt;V&gt; vaLues()</code> 获取Map集合中所有的value，返回一个Collection</p>
+<br>
+</li>
+<li><p><code>Set&lt;Map.Entry&lt;K,V&gt;&gt; entry Set()</code> 将Map集合转换成set集合</p>
+<p>假设现在有有一个Map集合 “map1”</p>
+<p>Set set = map1.entrySet();</p>
+<p>【注意：Map集合通过entrySet()方法转换成的这个Set集合，Set集合中元素的类型是Map.Entry&lt;K,V&gt;】</p>
+<p>【Map.Entry和String一样，都是一种类的名字，只不过：Map.Entry是静态内部类，是Map中的静态内部类】</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token class-name">SelfTest</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">HashSet</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Set</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Myclass</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">//声明一个静态内部类</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">InnerClass</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//静态方法</span>
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">m1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"静态内部类的m1方法实行"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">//实例方法</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">m2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"静态内部类中的实例方法执行！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//类名叫做：MyClass.InnerClass</span>
+        <span class="token class-name">Myclass</span><span class="token punctuation">.</span><span class="token class-name">InnerClass</span><span class="token punctuation">.</span><span class="token function">m1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//创建静态内部类对象</span>
+        <span class="token class-name">Myclass</span><span class="token punctuation">.</span><span class="token class-name">InnerClass</span> mi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Myclass</span><span class="token punctuation">.</span><span class="token class-name">InnerClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mi<span class="token punctuation">.</span><span class="token function">m2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//给一个Set集合</span>
+        <span class="token comment">//该Set集合中存储的对象是Myclass.InnerClass类型</span>
+        <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Myclass</span><span class="token punctuation">.</span><span class="token class-name">InnerClass</span><span class="token punctuation">></span></span> set <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//这个Set集合中存储的是字符串对象</span>
+        <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> set2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">MyMap</span><span class="token punctuation">.</span><span class="token class-name">MyEntry</span><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">></span><span class="token punctuation">></span></span> set3<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">class</span> <span class="token class-name">MyMap</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">MyEntry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">></span></span><span class="token punctuation">&#123;</span>
+
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+</li>
 </ul>
 </li>
+</ol>
+<ol start="4">
+<li><p>遍历Map集合（重点！！！）</p>
+<ul>
+<li><p>第一种方式：</p>
+<p>获取所有·的key，通过遍历key，来遍历value</p>
+<p>获取所有key，所有key是一个Set集合</p>
+<p><code>Set&lt;Integer&gt; keys = map.keySet();</code></p>
+<p>通过key获取value</p>
+</li>
+<li><p>第二种方式：</p>
+<p><code>Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</code></p>
+<p>以上方法就是把Map集合直接全部转换成Set集合</p>
+<p>Set集合中的元素的类型是：Map.Entry</p>
+<br>
+
+</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token class-name">SelfTest</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">HashMap</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Iterator</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Map</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Set</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapTest01</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">></span></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"zs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">"ls"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">"ww"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">"zl"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">/**
+         * 第一种方法
+         */</span>
+        <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> keys <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//foreach</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Integer</span> key<span class="token operator">:</span> keys<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>key <span class="token operator">+</span> <span class="token string">"="</span> <span class="token operator">+</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">//迭代器</span>
+        <span class="token class-name">Iterator</span> it <span class="token operator">=</span> keys<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token class-name">Object</span> o <span class="token operator">=</span> it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>o <span class="token operator">+</span> <span class="token string">"="</span> <span class="token operator">+</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">/**
+         * 第二种方法
+         */</span>
+        <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Map</span><span class="token punctuation">.</span><span class="token class-name">Entry</span><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">></span><span class="token punctuation">></span></span> set <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//将Map集合变成Set集合</span>
+        <span class="token comment">//迭代器</span>
+        <span class="token class-name">Iterator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Map</span><span class="token punctuation">.</span><span class="token class-name">Entry</span><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">></span><span class="token punctuation">></span></span> it2 <span class="token operator">=</span> set<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>it2<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token class-name">Map</span><span class="token punctuation">.</span><span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">></span></span> node <span class="token operator">=</span> it2<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Integer</span> key <span class="token operator">=</span> node<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">String</span> value <span class="token operator">=</span> node<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>key<span class="token operator">+</span><span class="token string">"="</span><span class="token operator">+</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">//foreach</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Map</span><span class="token punctuation">.</span><span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">></span></span> node <span class="token operator">:</span> set<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"="</span><span class="token operator">+</span>node<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 
             </div>
@@ -2663,7 +2839,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">16.3k</span>&nbsp;字
+                class="white-color">17.2k</span>&nbsp;字
             
             
             
