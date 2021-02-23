@@ -464,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-02-21
+                    2021-02-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    13.5k
+                    14.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    52 Min
+                    55 Min
                 </div>
                 
 
@@ -1049,9 +1049,9 @@
 <p>public native int hashCode();</p>
 <p>这个方法不是抽象方法，带有native关键字，底层调用c++程序。</p>
 </li>
-<li><p>hashCode()fang方法返回的是哈线：</p>
+<li><p>hashCode()方法返回的是哈希值：</p>
 <p>实际上就是java对象的内存地址，经过哈希算法，得出一个值。</p>
-<p>所以hashCode（）方法的执行结果可以等同看做一个java对象的内存地址</p>
+<p>所以hashCode()方法的执行结果可以等同看做一个java对象的内存地址</p>
 </li>
 </ol>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">&#123;</span>
@@ -2158,9 +2158,9 @@ for(元素类型 变量名 : 数组或集合)&#123;
 <p>称为：可排序集合</p>
 </li>
 <li><p>无序：这里的无序指的是存进去的顺序和取出来的顺序不同。并且没有下标</p>
+<p><br><br> <br><br></p>
 </li>
 </ol>
-<p><br><br> <br><br></p>
 </li>
 </ul>
 <h2 id="java-util-Map接口中常用的方法"><a href="#java-util-Map接口中常用的方法" class="headerlink" title="java.util.Map接口中常用的方法"></a>java.util.Map接口中常用的方法</h2><ol>
@@ -2194,6 +2194,7 @@ for(元素类型 变量名 : 数组或集合)&#123;
 <br>
 </li>
 <li><p><code>Set&lt;Map.Entry&lt;K,V&gt;&gt; entry Set()</code> 将Map集合转换成set集合</p>
+<p>例：<code>Set&lt;Map.Entry&lt;Integer,String&gt;&gt; set = map.entry Set()</code> </p>
 <p>假设现在有有一个Map集合 “map1”</p>
 <p>Set set = map1.entrySet();</p>
 <p>【注意：Map集合通过entrySet()方法转换成的这个Set集合，Set集合中元素的类型是Map.Entry&lt;K,V&gt;】</p>
@@ -2246,7 +2247,7 @@ for(元素类型 变量名 : 数组或集合)&#123;
 </li>
 </ol>
 <ol start="4">
-<li><p>遍历Map集合（重点！！！）</p>
+<li><p>遍历Map集合（重点！！！）遍历集合</p>
 <ul>
 <li><p>第一种方式：</p>
 <p>获取所有·的key，通过遍历key，来遍历value</p>
@@ -2277,7 +2278,7 @@ for(元素类型 变量名 : 数组或集合)&#123;
         map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">"ww"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">"zl"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment">/**
-         * 第一种方法
+         * 第一种方法 获取所有key，所有key是一个Set集合
          */</span>
         <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> keys <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment">//foreach</span>
@@ -2291,7 +2292,7 @@ for(元素类型 变量名 : 数组或集合)&#123;
             <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>o <span class="token operator">+</span> <span class="token string">"="</span> <span class="token operator">+</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
         <span class="token comment">/**
-         * 第二种方法
+         * 第二种方法 把Map集合直接全部转换成Set集合
          */</span>
         <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Map</span><span class="token punctuation">.</span><span class="token class-name">Entry</span><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">></span><span class="token punctuation">></span></span> set <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//将Map集合变成Set集合</span>
         <span class="token comment">//迭代器</span>
@@ -2307,7 +2308,103 @@ for(元素类型 变量名 : 数组或集合)&#123;
             <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"="</span><span class="token operator">+</span>node<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><br><br> <br><br></p>
+</li>
+</ol>
+<h2 id="HshMap集合"><a href="#HshMap集合" class="headerlink" title="HshMap集合"></a>HshMap集合</h2><ol>
+<li><p>HashMap集合底层是哈希表/散链表数据结构</p>
+</li>
+<li><p>哈希表是一个怎样的数据结构？</p>
+<p>哈希表是一个数组和单向链表的结合体</p>
+</li>
+<li><p>HashMap集合的key部分特点：</p>
+<p>无序，不可重复</p>
+<p>为什么无序？因为不一定挂到哪个单向链表上。</p>
+<p>不可重复是怎么保证的？equals方法来保证HashMap集合的key不可重复。</p>
+<p>如果key重复了，value会覆盖</p>
+<br>
+
+<p>放在HashMap集合key部分的元素其实就是放到HashSet集合中了。</p>
+<p>所以HashSet集合中的元素也需要同时重写hashCode()+equals()方法</p>
+</li>
+<li><p>哈希表HashMap使用不当时无法发挥性能！</p>
+<p>要求散列分布均匀，需要你重写hashCode()方法时有一定的技巧。</p>
+</li>
+<li><p>重点：放在HashMap集合key部分的元素，以及放在HashSet集合中的元素，同时重写equals方法和hashCode方法</p>
+</li>
+<li><p>HashMap集合的默认初始化容量为16，默认加载因子是0.75</p>
+<p>这个默认加载因子是当HashMap集合底层数组的容量达到75%的时候，数组开始扩容，扩容之后是原容量的2倍</p>
+<p>重点：HashMap初始化容量必须是2的倍数，这是为了散列分布均匀，提高HashMap集合的存储效率，所必须的。</p>
+<p><br><br></p>
+</li>
+</ol>
+<h3 id="HashMap的equals方法和hashCode方法重写"><a href="#HashMap的equals方法和hashCode方法重写" class="headerlink" title="HashMap的equals方法和hashCode方法重写"></a>HashMap的equals方法和hashCode方法重写</h3><ol>
+<li><p>向Map集合中存以及取，都是先调用key的hashCode方法，然后再调用equals方法！</p>
+<p>equals方法有可能调用，也有可能不调用</p>
+<p>比如put(k,v):k.hashCode()方法返回哈希值，哈希值经过哈希算法转换成下标，数组下标位置如果是null，equals不需要执行，get(k)方法同理</p>
+</li>
+<li><p>注意：如果一个类的equals方法重写了，那么hashCode()方法必须重写。</p>
+<p>并且equals方法返回如果是true，HashCode()方法返回的值必须一样。</p>
+<ul>
+<li>equals方法返回true表示两个对象相同，在同一个单向链表上比较，那么对于同一个单向链表的节点来说，他们的哈希值是相同的，所以hashCode()方法返回值也应该相同</li>
+</ul>
+</li>
+<li><p>hashCode()方法和equals()方法不用研究了，直接使用IDEA工具生成，不过这两个方法需要同时生成</p>
+</li>
+<li><p>对于哈希表数据结构来说：</p>
+<p>如果o1和o2的值先沟通，一定是放在同一个单向链表上。</p>
+<p>当然如果o1和o2的hash值不同，但由于哈希算法，执行结束之后转换的数组下标可能相同，此时会发生“哈希碰撞”</p>
+</li>
+<li><p>终极结论：放在HashMap集合key部分，以及方法HashSet集合中的元素，需要同时重写hashCode方法和equals方法。</p>
+<p><br><br> <br><br></p>
+</li>
+</ol>
+<h2 id="Properties类"><a href="#Properties类" class="headerlink" title="Properties类"></a>Properties类</h2><ul>
+<li><p>目前只需要掌握Properties属性类对象的相关方法即可。</p>
+</li>
+<li><p>Properties是一个Map集合，继承Hashtable，Properties的key和value都是String类型</p>
+</li>
+<li><p>Properties被称为属性类对象</p>
+</li>
+<li><p>Properties是线程安全的</p>
+</li>
+<li><p>需要掌握Properties的两个方法，一个存一个取</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token class-name">SelfTest</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Properties</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PropertiesTest</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//创建一个Properties对象</span>
+        <span class="token class-name">Properties</span> pro <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//存</span>
+        pro<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">"zd"</span><span class="token punctuation">,</span><span class="token string">"nb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        pro<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">"xjb"</span><span class="token punctuation">,</span><span class="token string">"sb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//通过key获取value</span>
+        <span class="token class-name">String</span> zd <span class="token operator">=</span> pro<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"zd"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> xjb <span class="token operator">=</span> pro<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"xjb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>zd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>xjb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><br><br> <br><br></p>
+</li>
+</ul>
+<h2 id="TreeSet和TreeMap"><a href="#TreeSet和TreeMap" class="headerlink" title="TreeSet和TreeMap"></a>TreeSet和TreeMap</h2><ol>
+<li><p>TreeSet集合底层实际上是一个TreeMap</p>
+</li>
+<li><p>TreeMap集合底层是一个二叉树</p>
+</li>
+<li><p>放在TreeSet集合中的元素，等同于放到TreeMap集合key部分了</p>
+</li>
+<li><p>TreeSet集合中的元素：无序不可重复，但是可以按照元素的大小顺序自动排序（升序）。</p>
+<p>称为：可排序集合</p>
+</li>
 </ol>
 
             </div>
@@ -2839,7 +2936,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">17.2k</span>&nbsp;字
+                class="white-color">18.1k</span>&nbsp;字
             
             
             
