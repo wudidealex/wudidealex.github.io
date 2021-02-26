@@ -464,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-02-23
+                    2021-02-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    14.4k
+                    15.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    55 Min
+                    60 Min
                 </div>
                 
 
@@ -2405,7 +2405,200 @@ for(元素类型 变量名 : 数组或集合)&#123;
 <li><p>TreeSet集合中的元素：无序不可重复，但是可以按照元素的大小顺序自动排序（升序）。</p>
 <p>称为：可排序集合</p>
 </li>
+<li><p>TreeSet无法对自定义类型排序</p>
+<ul>
+<li><p>放在TreeSet集合中的元素需要实现java.lang.Comparable接口</p>
+</li>
+<li><p>并且实现compareTo方法，equals可以不写</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Customer</span> <span class="token keyword">implements</span> <span class="token class-name">Comparable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Customer</span><span class="token punctuation">></span></span><span class="token punctuation">&#123;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span><span class="token class-name">Customer</span> c<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>怎么写比较规则</p>
+<p>compareTo方法的返回值很重要：</p>
+<p>返回0表示相同，value会覆盖</p>
+<p>返回&gt;0，会继续在右子树上找，</p>
+<p>返回&lt;0，会继续在左子树上找。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span>vip v<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">==</span>v<span class="token punctuation">.</span>age<span class="token punctuation">&#123;</span>
+     <span class="token comment">//年龄相同时按照名字排序</span>
+     <span class="token comment">//姓名是String类型，可以直接比。调用compareTo来完成比较</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">-</span> v<span class="token punctuation">.</span>age<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>实现比较器接口</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token class-name">SelfTest</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Comparator</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">TreeSet</span><span class="token punctuation">;</span>
+
+<span class="token comment">//Tree集合中元素课排序的第二种方式：使用比较器</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeMapTest</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//创建Tree集合的时候，需要使用这个比较器</span>
+        <span class="token comment">//通过构造方法传递一个比较器进去</span>
+
+        <span class="token comment">//给构造方法传递一个比较器</span>
+        <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">WuGui</span><span class="token punctuation">></span></span> wuGuis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WuGuiComparator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+
+        wuGuis<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WuGui</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        wuGuis<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WuGui</span><span class="token punctuation">(</span><span class="token number">800</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        wuGuis<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WuGui</span><span class="token punctuation">(</span><span class="token number">810</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token class-name">WuGui</span> wuGui<span class="token operator">:</span>wuGuis<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>wuGui<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">class</span> <span class="token class-name">WuGui</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">WuGui</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">WuGui</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">=</span>age<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token string">"WuGui&#123;"</span> <span class="token operator">+</span>
+                <span class="token string">"age="</span> <span class="token operator">+</span> age <span class="token operator">+</span>
+                <span class="token string">'&#125;'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//单独在这里编写一个比较器</span>
+<span class="token comment">//比较器实现java.util.Comparator接口。（Comparable是java.lang包下的  。Comparator是java1。util包下的。Comparable是第一种方式）</span>
+<span class="token keyword">class</span> <span class="token class-name">WuGuiComparator</span> <span class="token keyword">implements</span> <span class="token class-name">Comparator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">WuGui</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> compare <span class="token punctuation">(</span><span class="token class-name">WuGui</span> o1<span class="token punctuation">,</span><span class="token class-name">WuGui</span> o2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> o1<span class="token punctuation">.</span>age<span class="token operator">-</span>o2<span class="token punctuation">.</span>age<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><pre><code class="java">/*
+
+使用匿名内部类的方式，作用和上面一样
+
+*/
+package SelfTest;
+
+import java.util.Comparator;
+import java.util.TreeSet;
+
+//Tree集合中元素课排序的第二种方式：使用比较器
+public class TreeMapTest &#123;
+    public static void main(String[] args) &#123;
+        //创建Tree集合的时候，需要使用这个比较器
+        //通过构造方法传递一个比较器进去
+
+        //给构造方法传递一个比较器,匿名内部类
+        TreeSet&lt;WuGui&gt; wuGuis = new TreeSet&lt;&gt;(new Comparator&lt;WuGui&gt;() &#123;
+            @Override
+            public int compare(WuGui o1, WuGui o2) &#123;
+                return o1.age-o2.age;
+            &#125;
+        &#125;);
+
+</code></pre>
+</li>
+</ul>
+</li>
 </ol>
+<pre><code>         wuGuis.add(new WuGui(1000));
+         wuGuis.add(new WuGui(800));
+         wuGuis.add(new WuGui(810));
+         for(WuGui wuGui:wuGuis)&#123;
+             System.out.println(wuGui);
+         &#125;
+     &#125;
+ &#125;
+ class WuGui&#123;
+     int age;
+
+     public WuGui() &#123;
+     &#125;
+
+     public WuGui(int age)&#123;
+         this.age=age;
+     &#125;
+
+     @Override
+     public String toString() &#123;
+         return &quot;WuGui&#123;&quot; +
+                 &quot;age=&quot; + age +
+                 &#39;&#125;&#39;;
+     &#125;
+ &#125;
+ ```</code></pre>
+<ol start="6">
+<li><p>最终结论：放TreeSet或者TreeMap集合key部分的元素要想做到排序，包括以下两种方式：</p>
+<ol>
+<li>放在集合中的元素实现java.lang.Comparable接口</li>
+<li>在构造TreeSet或者TreeMap集合的时候给它传一个比较器对象</li>
+</ol>
+</li>
+<li><p>Comparable和Comparator怎么选择呢？</p>
+<ul>
+<li><p>当比较规则不会发生改表的时候。或者说比较规则只有一个的时候，建议实现Comparable接口</p>
+</li>
+<li><p>如果比较规则有多个，并且是需要多个比较规则之间频繁切换，建议使用Comparator接口</p>
+<p>Comparator接口的设计符合OCP原则</p>
+</li>
+</ul>
+<p><br><br> <br><br></p>
+</li>
+</ol>
+<h2 id="Collections工具类"><a href="#Collections工具类" class="headerlink" title="Collections工具类"></a>Collections工具类</h2><p>注意：java.util.Collection 集合接口；java.util.Collections集合工具类，方便集合的操作</p>
+<p> <br><br> <br><br></p>
+<h2 id="IO流，什么事IO"><a href="#IO流，什么事IO" class="headerlink" title="IO流，什么事IO?"></a>IO流，什么事IO?</h2><ul>
+<li><p>I:input ; O:output</p>
+</li>
+<li><p>java IO流这块有四大家族：</p>
+<p>四大首领：</p>
+<p>java.io.InputStream 字节输入流</p>
+<p>java.io.OutputStream 字节输出流</p>
+<br>
+
+<p>java.io.Reader 字符输入流</p>
+<p>java.io.Writer 字符输出流</p>
+<br>
+
+<p>四大家族的首领都是抽象类。（abstract class）</p>
+</li>
+<li><p><strong>所有流</strong>都实现了：java.io.Closeable接口，都是可关闭，都有close（）方法。</p>
+<p>养成好习惯，用完流一定要关闭。</p>
+<p>注意：在java中只要“类名”以Stream结尾的都是字节流。以”Reader/Writer”结尾的都是字符流    </p>
+</li>
+<li><p>所有的输出流都实现了java.io.Flushable接口，都是可刷新的，都有flush()方法。养成好习惯，输出流在最终输出之后，一定要记得flush()刷新一下，表示将通道、管道当中剩余未输出的数据，强行输出玩（清空管道！）刷新的作用就是清空管道。</p>
+<p>如果没有flush()可能会导致丢失数据</p>
+</li>
+<li><p>java.io包下需要掌握的流有16个：</p>
+</li>
+</ul>
+<p>  java.io.FileInputstream</p>
+<p>  java.io.FileOutputstream</p>
+<p>  java.io.FileReader</p>
+<p>  java.io.FileWriter</p>
+<p>  java.io.InputStreamReader</p>
+<p>  java.io.OutputStreamWriter</p>
+<p>  java.io.BufferedReader</p>
+<p>  java.io.BufferedWriter</p>
+<p>  java.io.BufferedInputStream</p>
+<p>  java.io.BufferedOutputStream</p>
+<p>  java.io.DataInputStream</p>
+<p>  java.io.DataOutputStream</p>
+<p>  java.io.ObjectInputStream</p>
+<p>  java.io.ObjectOutputStream</p>
+<p>  java.io.PrintWriter</p>
+<p>  java.io.PrintStream</p>
 
             </div>
             <hr/>
@@ -2936,7 +3129,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.1k</span>&nbsp;字
+                class="white-color">19.2k</span>&nbsp;字
             
             
             
