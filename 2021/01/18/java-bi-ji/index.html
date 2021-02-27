@@ -464,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-02-26
+                    2021-02-27
                 </div>
                 
 
@@ -493,7 +493,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="IDEA使用"><a href="#IDEA使用" class="headerlink" title="IDEA使用"></a>IDEA使用</h2><h3 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h3><ol>
+                <p>[TOC]</p>
+<h2 id="IDEA使用"><a href="#IDEA使用" class="headerlink" title="IDEA使用"></a>IDEA使用</h2><h3 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h3><ol>
 <li><p>新建一个Empty Project</p>
 <p>新建一个空的工程，选择创建工程窗口下面的Empty Project</p>
 </li>
@@ -1830,7 +1831,7 @@ new对象的时候一定是在堆内存当中开辟空间
 </ol>
 <h3 id="关于try-catch中的fianlly子句"><a href="#关于try-catch中的fianlly子句" class="headerlink" title="关于try..catch中的fianlly子句"></a>关于try..catch中的fianlly子句</h3><ol>
 <li><p>在finally子句中的代码是最后执行的，并且是一定会执行，即使try语句块中的代码出现了异常。</p>
-<p>finally子句必须和ty一起出现，不能单独编写。</p>
+<p>finally子句必须和try一起出现，不能单独编写。</p>
 </li>
 <li><p>finally语句通常使用在哪些情况下呢？</p>
 <p><br><br></p>
@@ -1838,7 +1839,7 @@ new对象的时候一定是在堆内存当中开辟空间
 </ol>
 <h3 id="java中任何自定义异常"><a href="#java中任何自定义异常" class="headerlink" title="java中任何自定义异常"></a>java中任何自定义异常</h3><p>两步：</p>
 <ol>
-<li>编写一个类继承Excep或者RuntimeException</li>
+<li>编写一个类继承Exception或者RuntimeException</li>
 <li>提供两个构造方法，一个无参数的，一个带有String</li>
 </ol>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyException</span> <span class="token keyword">extends</span> <span class="token class-name">Exception</span><span class="token punctuation">&#123;</span>
@@ -2558,7 +2559,7 @@ public class TreeMapTest &#123;
 </ol>
 <h2 id="Collections工具类"><a href="#Collections工具类" class="headerlink" title="Collections工具类"></a>Collections工具类</h2><p>注意：java.util.Collection 集合接口；java.util.Collections集合工具类，方便集合的操作</p>
 <p> <br><br> <br><br></p>
-<h2 id="IO流，什么事IO"><a href="#IO流，什么事IO" class="headerlink" title="IO流，什么事IO?"></a>IO流，什么事IO?</h2><ul>
+<h2 id="IO流，什么是IO"><a href="#IO流，什么是IO" class="headerlink" title="IO流，什么是IO?"></a>IO流，什么是IO?</h2><ul>
 <li><p>I:input ; O:output</p>
 </li>
 <li><p>java IO流这块有四大家族：</p>
@@ -2575,30 +2576,48 @@ public class TreeMapTest &#123;
 </li>
 <li><p><strong>所有流</strong>都实现了：java.io.Closeable接口，都是可关闭，都有close（）方法。</p>
 <p>养成好习惯，用完流一定要关闭。</p>
-<p>注意：在java中只要“类名”以Stream结尾的都是字节流。以”Reader/Writer”结尾的都是字符流    </p>
 </li>
-<li><p>所有的输出流都实现了java.io.Flushable接口，都是可刷新的，都有flush()方法。养成好习惯，输出流在最终输出之后，一定要记得flush()刷新一下，表示将通道、管道当中剩余未输出的数据，强行输出玩（清空管道！）刷新的作用就是清空管道。</p>
+<li><p><strong>所有的输出流</strong>都实现了java.io.Flushable接口，都是可刷新的，都有flush()方法。养成好习惯，输出流在最终输出之后，一定要记得flush()刷新一下，表示将通道、管道当中剩余未输出的数据，强行输出玩（清空管道！）刷新的作用就是清空管道。</p>
 <p>如果没有flush()可能会导致丢失数据</p>
 </li>
+<li><p><strong>注意：在java中只要“类名”以Stream结尾的都是字节流。以”Reader/Writer”结尾的都是字符流</strong>    </p>
+</li>
 <li><p>java.io包下需要掌握的流有16个：</p>
+<p><strong>文件专属</strong>：</p>
+<p>java.io.FileInputstream</p>
+<p>java.io.FileOutputstream</p>
+<p>java.io.FileReader</p>
+<p>java.io.FileWriter</p>
+<br>
+
+<p><strong>转换流</strong>：（将字节流转换成字符流）</p>
+<p>java.io.InputStreamReader</p>
+<p>java.io.OutputStreamWriter</p>
+<br>
+
+<p><strong>缓冲流专属</strong>：</p>
+<p>java.io.BufferedReader</p>
+<p>java.io.BufferedWriter</p>
+<p>java.io.BufferedInputStream</p>
+<p>java.io.BufferedOutputStream</p>
+<br>
+
+<p><strong>数据流专属</strong>：</p>
+<p>java.io.DataInputStream</p>
+<p>java.io.DataOutputStream</p>
+<br>
+
+<p><strong>标准输出流</strong>：</p>
+<p>java.io.PrintWriter</p>
+<p>java.io.PrintStream</p>
+<br>
+
+<p><strong>对象专属流</strong>：</p>
+<p>java.io.ObjectInputStream</p>
+<p>java.io.ObjectOutputStream</p>
 </li>
 </ul>
-<p>  java.io.FileInputstream</p>
-<p>  java.io.FileOutputstream</p>
-<p>  java.io.FileReader</p>
-<p>  java.io.FileWriter</p>
-<p>  java.io.InputStreamReader</p>
-<p>  java.io.OutputStreamWriter</p>
-<p>  java.io.BufferedReader</p>
-<p>  java.io.BufferedWriter</p>
-<p>  java.io.BufferedInputStream</p>
-<p>  java.io.BufferedOutputStream</p>
-<p>  java.io.DataInputStream</p>
-<p>  java.io.DataOutputStream</p>
-<p>  java.io.ObjectInputStream</p>
-<p>  java.io.ObjectOutputStream</p>
-<p>  java.io.PrintWriter</p>
-<p>  java.io.PrintStream</p>
+<p> <br><br> </p>
 
             </div>
             <hr/>
@@ -3129,7 +3148,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">19.2k</span>&nbsp;字
+                class="white-color">19.3k</span>&nbsp;字
             
             
             
