@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>lcdzzz的博客</title>
+  <title>小杰Alex的博客</title>
   
-  <subtitle>等待白鸽飞出</subtitle>
-  <link href="http://lcdzzz.github.io/atom.xml" rel="self"/>
+  <subtitle>今天不努力 明天变废物</subtitle>
+  <link href="http://wudidealex.github.io/atom.xml" rel="self"/>
   
-  <link href="http://lcdzzz.github.io/"/>
+  <link href="http://wudidealex.github.io/"/>
   <updated>2021-03-07T13:34:20.799Z</updated>
-  <id>http://lcdzzz.github.io/</id>
+  <id>http://wudidealex.github.io/</id>
   
   <author>
-    <name>lcdzzz</name>
+    <name>wudidealex</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>java自学笔记</title>
-    <link href="http://lcdzzz.github.io/2021/01/18/java-bi-ji/"/>
-    <id>http://lcdzzz.github.io/2021/01/18/java-bi-ji/</id>
+    <link href="http://wudidealex.github.io/2021/01/18/java-bi-ji/"/>
+    <id>http://wudidealex.github.io/2021/01/18/java-bi-ji/</id>
     <published>2021-01-18T14:11:16.357Z</published>
     <updated>2021-03-07T13:34:20.799Z</updated>
     
@@ -33,17 +33,17 @@
     
     
     
-    <category term="java" scheme="http://lcdzzz.github.io/categories/java/"/>
+    <category term="java" scheme="http://wudidealex.github.io/categories/java/"/>
     
     
-    <category term="2021寒假自学笔记" scheme="http://lcdzzz.github.io/tags/2021%E5%AF%92%E5%81%87%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    <category term="2021寒假自学笔记" scheme="http://wudidealex.github.io/tags/2021%E5%AF%92%E5%81%87%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>常见的DOS命令</title>
-    <link href="http://lcdzzz.github.io/2021/01/18/chang-jian-de-dos-ming-ling/"/>
-    <id>http://lcdzzz.github.io/2021/01/18/chang-jian-de-dos-ming-ling/</id>
+    <link href="http://wudidealex.github.io/2021/01/18/chang-jian-de-dos-ming-ling/"/>
+    <id>http://wudidealex.github.io/2021/01/18/chang-jian-de-dos-ming-ling/</id>
     <published>2021-01-18T07:22:04.169Z</published>
     <updated>2021-01-20T05:58:45.036Z</updated>
     
@@ -66,14 +66,14 @@
     
     
     
-    <category term="2021寒假自学笔记" scheme="http://lcdzzz.github.io/tags/2021%E5%AF%92%E5%81%87%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    <category term="2021寒假自学笔记" scheme="http://wudidealex.github.io/tags/2021%E5%AF%92%E5%81%87%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>acm部分做题记录</title>
-    <link href="http://lcdzzz.github.io/2020/11/28/acm-bu-fen-zuo-ti-ji-lu/"/>
-    <id>http://lcdzzz.github.io/2020/11/28/acm-bu-fen-zuo-ti-ji-lu/</id>
+    <link href="http://wudidealex.github.io/2020/11/28/acm-bu-fen-zuo-ti-ji-lu/"/>
+    <id>http://wudidealex.github.io/2020/11/28/acm-bu-fen-zuo-ti-ji-lu/</id>
     <published>2020-11-28T13:18:55.888Z</published>
     <updated>2021-02-01T06:49:10.616Z</updated>
     
@@ -88,15 +88,15 @@
     
     
     
-    <category term="acm" scheme="http://lcdzzz.github.io/categories/acm/"/>
+    <category term="acm" scheme="http://wudidealex.github.io/categories/acm/"/>
     
     
   </entry>
   
   <entry>
     <title>java语法随记</title>
-    <link href="http://lcdzzz.github.io/2020/11/25/java-yu-fa-sui-ji/"/>
-    <id>http://lcdzzz.github.io/2020/11/25/java-yu-fa-sui-ji/</id>
+    <link href="http://wudidealex.github.io/2020/11/25/java-yu-fa-sui-ji/"/>
+    <id>http://wudidealex.github.io/2020/11/25/java-yu-fa-sui-ji/</id>
     <published>2020-11-25T11:59:11.214Z</published>
     <updated>2021-02-11T06:36:05.655Z</updated>
     
@@ -110,17 +110,17 @@
     
     
     
-    <category term="java" scheme="http://lcdzzz.github.io/categories/java/"/>
+    <category term="java" scheme="http://wudidealex.github.io/categories/java/"/>
     
     
-    <category term="2021寒假自学笔记" scheme="http://lcdzzz.github.io/tags/2021%E5%AF%92%E5%81%87%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    <category term="2021寒假自学笔记" scheme="http://wudidealex.github.io/tags/2021%E5%AF%92%E5%81%87%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>git bash部分命令行的操作</title>
-    <link href="http://lcdzzz.github.io/2020/11/25/git-bash-bu-fen-ming-ling-xing-de-cao-zuo/"/>
-    <id>http://lcdzzz.github.io/2020/11/25/git-bash-bu-fen-ming-ling-xing-de-cao-zuo/</id>
+    <link href="http://wudidealex.github.io/2020/11/25/git-bash-bu-fen-ming-ling-xing-de-cao-zuo/"/>
+    <id>http://wudidealex.github.io/2020/11/25/git-bash-bu-fen-ming-ling-xing-de-cao-zuo/</id>
     <published>2020-11-24T16:15:47.063Z</published>
     <updated>2021-01-19T12:42:24.168Z</updated>
     
@@ -134,15 +134,15 @@
     
     
     
-    <category term="git bash命令" scheme="http://lcdzzz.github.io/categories/git-bash%E5%91%BD%E4%BB%A4/"/>
+    <category term="git bash命令" scheme="http://wudidealex.github.io/categories/git-bash%E5%91%BD%E4%BB%A4/"/>
     
     
   </entry>
   
   <entry>
     <title>解决 java “错误：编码GBK 的不可映射字符”</title>
-    <link href="http://lcdzzz.github.io/2020/11/24/jie-jue-java-cuo-wu-bian-ma-gbk-de-bu-ke-ying-she-zi-fu/"/>
-    <id>http://lcdzzz.github.io/2020/11/24/jie-jue-java-cuo-wu-bian-ma-gbk-de-bu-ke-ying-she-zi-fu/</id>
+    <link href="http://wudidealex.github.io/2020/11/24/jie-jue-java-cuo-wu-bian-ma-gbk-de-bu-ke-ying-she-zi-fu/"/>
+    <id>http://wudidealex.github.io/2020/11/24/jie-jue-java-cuo-wu-bian-ma-gbk-de-bu-ke-ying-she-zi-fu/</id>
     <published>2020-11-24T15:55:12.269Z</published>
     <updated>2021-01-21T09:20:09.860Z</updated>
     
@@ -161,8 +161,8 @@
   
   <entry>
     <title>hexo部分命令</title>
-    <link href="http://lcdzzz.github.io/2020/11/24/hexo-bu-fen-ming-ling/"/>
-    <id>http://lcdzzz.github.io/2020/11/24/hexo-bu-fen-ming-ling/</id>
+    <link href="http://wudidealex.github.io/2020/11/24/hexo-bu-fen-ming-ling/"/>
+    <id>http://wudidealex.github.io/2020/11/24/hexo-bu-fen-ming-ling/</id>
     <published>2020-11-24T05:37:13.939Z</published>
     <updated>2021-01-21T08:47:12.804Z</updated>
     
@@ -178,15 +178,15 @@
     
     
     
-    <category term="hexo" scheme="http://lcdzzz.github.io/categories/hexo/"/>
+    <category term="hexo" scheme="http://wudidealex.github.io/categories/hexo/"/>
     
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://lcdzzz.github.io/2020/11/24/hello-world/"/>
-    <id>http://lcdzzz.github.io/2020/11/24/hello-world/</id>
+    <link href="http://wudidealex.github.io/2020/11/24/hello-world/"/>
+    <id>http://wudidealex.github.io/2020/11/24/hello-world/</id>
     <published>2020-11-24T05:37:13.934Z</published>
     <updated>2020-11-24T16:29:39.202Z</updated>
     
