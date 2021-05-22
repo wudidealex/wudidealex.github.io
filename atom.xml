@@ -6,7 +6,7 @@
   <link href="http://wudidealex.github.io/atom.xml" rel="self"/>
   
   <link href="http://wudidealex.github.io/"/>
-  <updated>2021-03-07T13:34:20.799Z</updated>
+  <updated>2021-05-22T13:48:02.867Z</updated>
   <id>http://wudidealex.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux命令</title>
+    <link href="http://wudidealex.github.io/2021/05/22/linux-chang-yong-ming-ling/"/>
+    <id>http://wudidealex.github.io/2021/05/22/linux-chang-yong-ming-ling/</id>
+    <published>2021-05-22T13:46:01.890Z</published>
+    <updated>2021-05-22T13:48:02.867Z</updated>
+    
+    <content type="html"><![CDATA[<h6 id="ELF文件"><a href="#ELF文件" class="headerlink" title="ELF文件"></a>ELF文件</h6><p>头部 节 段</p><h3 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h3><h6 id="进入linux根目录："><a href="#进入linux根目录：" class="headerlink" title="进入linux根目录："></a>进入linux根目录：</h6><p>cd /   进入系统<em>根目录</em></p><h6 id="cd命令："><a href="#cd命令：" class="headerlink" title="cd命令："></a>cd命令：</h6><p>改变目录，”change directory”，其中目录的路径可分为绝对路径和相对路径。若目录名称省略，则切换至使用者的用户目录(也就是刚登录时所在的目录)。</p><p>eg：cd .. 切换至当前目录位置的上一级目录</p><h6 id="ls命令："><a href="#ls命令：" class="headerlink" title="ls命令："></a>ls命令：</h6><p>列出指定目录下的内容及其相关属性信息，list 的缩写，<strong>语法格式:</strong> ls [选项] [文件]</p><table><thead><tr><th>-a</th><th>显示所有文件及目录 (包括以“.”开头的隐藏文件)</th></tr></thead><tbody><tr><td>-l</td><td>使用长格式列出文件及目录信息</td></tr><tr><td>-r</td><td>将文件以相反次序显示(默认依英文字母次序)</td></tr><tr><td>-t</td><td>根据最后的修改时间排序</td></tr><tr><td>-A</td><td>同 -a ，但不列出 “.” (当前目录) 及 “..” (父目录)</td></tr><tr><td>-S</td><td>根据文件大小排序</td></tr><tr><td>-R</td><td>递归列出所有子目录</td></tr></tbody></table><h6 id="mkdir命令："><a href="#mkdir命令：" class="headerlink" title="mkdir命令："></a>mkdir命令：</h6><h6 id="pwd命令："><a href="#pwd命令：" class="headerlink" title="pwd命令："></a>pwd命令：</h6><p>print working directory 显示当前工作目录的绝对路径</p><h4 id="linux下如何从普通用户转成root用户"><a href="#linux下如何从普通用户转成root用户" class="headerlink" title="linux下如何从普通用户转成root用户"></a>linux下如何从普通用户转成root用户</h4><p><em>[用户@localhost <del>]$     :localhost指的是主机名，</del>指的是当前目录，后面的$符号表示普通用户 如果是#表示超级用户</em></p><p><em><img src="https://img-blog.csdn.net/20150313202747803?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMjU2MTE3Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="img"></em></p><h5 id="Linux初始root密码设置"><a href="#Linux初始root密码设置" class="headerlink" title="[Linux初始root密码设置]:"></a>[Linux初始root密码设置]:</h5><p>1.</p><p><img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20210516211915946.png" alt="image-20210516211915946"></p><p>2.su   输入更改的密码</p><p>3.退出超级管理员模式用exit</p><h6 id="man命令："><a href="#man命令：" class="headerlink" title="man命令："></a>man命令：</h6><p>manual的缩写，即使用手册的意思。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h6 id=&quot;ELF文件&quot;&gt;&lt;a href=&quot;#ELF文件&quot; class=&quot;headerlink&quot; title=&quot;ELF文件&quot;&gt;&lt;/a&gt;ELF文件&lt;/h6&gt;&lt;p&gt;头部 节 段&lt;/p&gt;
+&lt;h3 id=&quot;linux常用命令&quot;&gt;&lt;a href=&quot;#linux常用命令&quot; class=&quot;</summary>
+      
+    
+    
+    
+    <category term="linux" scheme="http://wudidealex.github.io/categories/linux/"/>
+    
+    
+    <category term="linux基础" scheme="http://wudidealex.github.io/tags/linux%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>java自学笔记</title>
